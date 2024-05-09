@@ -81,9 +81,17 @@ const MediaCard: React.FC<MediaCardProps> = ({
   techStack,
 }) => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia sx={{ height: 140 }} image={image ? image : gif} title={title} />{' '}
-      <CardContent>
+    <Card
+      sx={{ maxWidth: 345, display: 'flex', flexDirection: 'column', height: '100%' }}
+    >
+      <CardMedia
+        sx={{
+          height: 140,
+        }}
+        image={image ? image : gif}
+        title={title}
+      />{' '}
+      <CardContent sx={{ flexGrow: 1 }}>
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
@@ -114,7 +122,7 @@ const MediaCard: React.FC<MediaCardProps> = ({
           ))}
         </div>
       </CardContent>
-      <CardActions>
+      <CardActions className="project-card">
         <Button size="small" component={Link} to={link}>
           {button}
         </Button>

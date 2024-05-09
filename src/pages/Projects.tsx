@@ -1,18 +1,12 @@
 import Grid from '@mui/material/Grid';
 import React from 'react';
 
-import AICalendarImage from '../assets/ai-calendar.png';
-import glomaImage from '../assets/gloma.png';
-import PandaImage from '../assets/panda.jpeg';
-import SmartOHImage from '../assets/smart_oh.png';
-import spellingBeeImage from '../assets/spelling_bee.png';
-import TetrisGIF from '../assets/tetris.gif';
 import MediaCard from '../components/MediaCard';
 
 const Projects: React.FC = () => {
   const projects = [
     {
-      image: glomaImage,
+      image: 'https://branyang02.github.io/images/gloma.png',
       title: 'GLOMA: Grounded Location for Object Manipulation',
       description:
         'An AI Image Editing pipeline that allows robotic agents to generate goal images.',
@@ -21,7 +15,7 @@ const Projects: React.FC = () => {
       techStack: ['Python', 'PyTorch', 'LlaMA2', 'HuggingFace 🤗'],
     },
     {
-      gif: TetrisGIF,
+      gif: 'https://branyang02.github.io/images/tetris.gif',
       title: 'Multi-agent Tetris AI',
       description: 'A Multi-agent Tetris AI trained using Reinforcement Learning.',
       button: 'GitHub',
@@ -29,7 +23,7 @@ const Projects: React.FC = () => {
       techStack: ['Python', 'PyTorch'],
     },
     {
-      image: PandaImage,
+      image: 'https://branyang02.github.io/images/panda.jpeg',
       title: 'Multi-Agent RL with IsaacGym',
       description:
         'Added a series of MARL takss involving Panda Robots in Nvidia IsaacGym.',
@@ -38,7 +32,7 @@ const Projects: React.FC = () => {
       techStack: ['Python', 'PyTorch', 'Nvidia IsaacGym'],
     },
     {
-      image: AICalendarImage,
+      image: 'https://branyang02.github.io/images/ai-calendar.png',
       title: 'AI Calendar Maps',
       description:
         'An AI Places Recommendation app that recommends based on your calendar.',
@@ -47,7 +41,7 @@ const Projects: React.FC = () => {
       techStack: ['Python', 'JavaScript', 'Django', 'OpenAI', 'Google Cloud', 'Heroku'],
     },
     {
-      image: spellingBeeImage,
+      image: 'https://branyang02.github.io/images/spelling_bee.png',
       title: 'Spelling Bee',
       description: 'Fun Party Spelling Bee Game with score counter and word list.',
       techStack: ['TypeScript', 'React'],
@@ -55,7 +49,7 @@ const Projects: React.FC = () => {
       link: '/projects/spelling-bee',
     },
     {
-      image: SmartOHImage,
+      image: 'https://branyang02.github.io/images/smart_oh.png',
       title: 'Smart OH (VTHacks Winner)',
       description:
         'AI powered office hour queue system that streamlines the process of office hours.',
@@ -76,9 +70,26 @@ const Projects: React.FC = () => {
   return (
     <div>
       <h1>Projects</h1>
-      <Grid container spacing={2}>
+      <Grid
+        container
+        spacing={2}
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+        }}
+      >
         {projects.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
+          <Grid
+            item
+            xs={12}
+            sm={6}
+            md={4}
+            key={index}
+            sx={{
+              display: 'flex',
+              'flex-grow': '1',
+            }}
+          >
             <MediaCard
               image={project.image}
               title={project.title}

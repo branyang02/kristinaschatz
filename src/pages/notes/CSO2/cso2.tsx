@@ -13,7 +13,6 @@ import remarkMath from 'remark-math';
 import BlogMenu from '../../../components/BlogMenu';
 import CodeBlock from '../../../components/CodeBlock';
 import StaticCodeBlock from '../../../components/StaticCodeBlock';
-import TikZ from '../../../components/TikZ';
 import markdown from './cso2.md?raw';
 
 type CodeProps = React.HTMLAttributes<HTMLElement> & {

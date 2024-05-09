@@ -1,5 +1,6 @@
-html, body {
-  height: 100%; 
+html,
+body {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
@@ -11,8 +12,8 @@ html, body {
 }
 
 .main-content {
-  flex: 1; 
-  box-sizing: border-box; 
+  flex: 1;
+  box-sizing: border-box;
 }
 
 :root {
@@ -89,6 +90,7 @@ button {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -100,6 +102,10 @@ button {
 
 body.dark-mode a {
   color: #fff;
+}
+
+body.dark-mode .project-card a {
+  color: #1976d2;
 }
 
 body.dark-mode a:hover,
