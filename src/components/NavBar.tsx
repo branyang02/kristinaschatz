@@ -50,7 +50,7 @@ function NavBar() {
       </Nav.Link>
       <Nav.Link
         as={Link}
-        to="/blog"
+        to="/blogs"
         className="navbar-text"
         style={{ color: darkMode ? 'white' : 'black' }}
       >
@@ -107,7 +107,7 @@ function NavBar() {
             </Menu.Item>
             <Menu.Item
               onSelect={() => {
-                handleSelect('/blog');
+                handleSelect('/blogs');
                 close();
               }}
             >
