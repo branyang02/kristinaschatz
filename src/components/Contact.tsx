@@ -1,9 +1,8 @@
 import '../styles/Contact.css';
 
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'; // Social media icons
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons'; // Email icon
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // If using Font Awesome
-import React from 'react';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Contact = () => {
   return (
