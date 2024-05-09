@@ -147,7 +147,13 @@ function NavBar() {
   return (
     <>
       <Navbar style={{ paddingTop: '20px' }}>
-        <Container>
+        <Container
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+          }}
+        >
           <Navbar.Brand
             as={Link}
             to="/"
