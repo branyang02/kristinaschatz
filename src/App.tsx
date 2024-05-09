@@ -45,11 +45,11 @@ const App = () => {
               <Route
                 path="/"
                 element={
-                  <>
+                  <Pane color={darkMode ? 'white' : 'black'}>
                     <Biography />
                     <WorkHistory />
                     <News />
-                  </>
+                  </Pane>
                 }
               />
               <Route path="/courses" element={<Courses />} />
