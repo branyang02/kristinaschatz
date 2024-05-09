@@ -33,9 +33,6 @@ const components = {
       if (language.includes('execute-')) {
         return <CodeBlock initialCode={code} language={language.split('-').pop()} />;
       }
-      if (language === 'tikz') {
-        return <TikZ tikzScript={code} />;
-      }
       return <StaticCodeBlock code={code} language={language} />;
     } else {
       return (
