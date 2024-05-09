@@ -21,7 +21,14 @@ const App = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
 
   return (
-    <Pane backgroundColor={darkMode ? '#333' : 'white'}>
+    <Pane
+      backgroundColor={darkMode ? '#333' : 'white'}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+      }}
+    >
       <Router>
         <Pane style={{ position: 'relative' }}>
           <IconButton
@@ -66,7 +73,6 @@ const App = () => {
             <ClustrMapsWidget />
           </Container>
         </Pane>
-
         <Footer />
       </Router>
     </Pane>
