@@ -9,8 +9,10 @@ import { Link, To } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
 import resumePDF from '../assets/resume.pdf';
+import { useDarkMode } from '../context/DarkModeContext';
 
 function NavBar() {
+  const { darkMode } = useDarkMode();
   const navigate = useNavigate();
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -30,22 +32,52 @@ function NavBar() {
 
   const desktopMenu = (
     <Nav className="justify-content-end">
-      <Nav.Link as={Link} to="/" className="navbar-brand-custom">
+      <Nav.Link
+        as={Link}
+        to="/"
+        className="navbar-text"
+        style={{ color: darkMode ? 'white' : 'black' }}
+      >
         Home
       </Nav.Link>
-      <Nav.Link as={Link} to="/courses" className="navbar-brand-custom">
+      <Nav.Link
+        as={Link}
+        to="/courses"
+        className="navbar-text"
+        style={{ color: darkMode ? 'white' : 'black' }}
+      >
         Relevant Coursework
       </Nav.Link>
-      <Nav.Link as={Link} to="/blog" className="navbar-brand-custom">
+      <Nav.Link
+        as={Link}
+        to="/blog"
+        className="navbar-text"
+        style={{ color: darkMode ? 'white' : 'black' }}
+      >
         Blog
       </Nav.Link>
-      <Nav.Link as={Link} to="/notes" className="navbar-brand-custom">
+      <Nav.Link
+        as={Link}
+        to="/notes"
+        className="navbar-text"
+        style={{ color: darkMode ? 'white' : 'black' }}
+      >
         Notes
       </Nav.Link>
-      <Nav.Link as={Link} to="/projects" className="navbar-brand-custom">
+      <Nav.Link
+        as={Link}
+        to="/projects"
+        className="navbar-text"
+        style={{ color: darkMode ? 'white' : 'black' }}
+      >
         Projects
       </Nav.Link>
-      <Nav.Link href={resumePDF} target="_blank" className="navbar-brand-custom">
+      <Nav.Link
+        href={resumePDF}
+        target="_blank"
+        className="navbar-text"
+        style={{ color: darkMode ? 'white' : 'black' }}
+      >
         Resume
       </Nav.Link>
     </Nav>
@@ -54,9 +86,7 @@ function NavBar() {
   const mobileMenu = (
     <Popover
       position={Position.BOTTOM_RIGHT}
-      content={(
-        { close }, // Utilize the close function provided by Popover's content prop
-      ) => (
+      content={({ close }) => (
         <Menu>
           <Menu.Group>
             <Menu.Item
@@ -118,13 +148,26 @@ function NavBar() {
     <>
       <Navbar style={{ paddingTop: '20px' }}>
         <Container>
-          <Navbar.Brand as={Link} to="/" className="navbar-brand-custom">
+          <Navbar.Brand
+            as={Link}
+            to="/"
+            style={{
+              color: darkMode ? 'white' : 'black',
+            }}
+            className="navbar-text"
+          >
             Brandon (Yifan) Yang
           </Navbar.Brand>
           {isMobile ? mobileMenu : desktopMenu}
         </Container>
       </Navbar>
-      <hr className="navbar-separator" />
+      <hr
+        style={{
+          backgroundColor: darkMode ? 'white' : 'black',
+          color: darkMode ? 'white' : 'black',
+          borderColor: darkMode ? 'white' : 'black',
+        }}
+      />
     </>
   );
 }
