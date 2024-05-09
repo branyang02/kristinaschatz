@@ -1,24 +1,19 @@
 import './styles/App.css';
 
-import { IconButton, LightbulbIcon, MoonIcon } from 'evergreen-ui';
+import { IconButton, LightbulbIcon, MoonIcon, Pane } from 'evergreen-ui';
 import Container from 'react-bootstrap/Container';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Biography from './components/Biography';
 import ClustrMapsWidget from './components/ClusterMapsWidget';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import News from './components/News';
 import WorkHistory from './components/WorkHistory';
 import { useDarkMode } from './context/DarkModeContext';
-import About from './pages/About';
-import Blog from './pages/blog/Blog';
-import Sora from './pages/blog/blogs/Sora/Sora';
-import Transformers from './pages/blog/blogs/Transformers/Transformers';
 import Courses from './pages/Courses';
-import CSO2 from './pages/notes/CSO2/cso2';
-import Notes from './pages/notes/Notes';
+import NoteBlogCards from './pages/NoteBlogCards';
+import NotesBlogs from './pages/NotesBlogs';
 import Projects from './pages/Projects';
 import SpellingBee from './pages/spelling_bee/SpellingBee';
 
@@ -26,54 +21,61 @@ const App = () => {
   const { darkMode, toggleDarkMode } = useDarkMode();
 
   return (
-    <Router>
-      <div style={{ position: 'relative' }}>
-        <IconButton
-          height={56}
-          icon={darkMode ? LightbulbIcon : MoonIcon}
-          onClick={() => toggleDarkMode()}
-          style={{
-            position: 'fixed',
-            bottom: '20px',
-            left: '20px',
-            zIndex: 1000,
-          }}
-        />
-        <div className="nav-bar">
+    <Pane
+      backgroundColor={darkMode ? '#333' : 'white'}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+      }}
+    >
+      <Router>
+        <Pane style={{ position: 'relative' }}>
+          <IconButton
+            height={56}
+            icon={darkMode ? LightbulbIcon : MoonIcon}
+            onClick={() => toggleDarkMode()}
+            style={{
+              position: 'fixed',
+              bottom: '20px',
+              left: '20px',
+              zIndex: 1000,
+            }}
+          />
+        </Pane>
+        <Pane>
           <NavBar />
-        </div>
-      </div>
-      <div className="main-content">
-        <Routes>
-          <Route path="/notes/cso2" element={<CSO2 />} />
-        </Routes>
-        <Container as="main" className="py-4 px-3 mx-auto custom-padding">
+        </Pane>
+        <Pane className="main-content">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Biography />
-                  <WorkHistory />
-                  <News />
-                </>
-              }
-            />
-            <Route path="/courses" element={<Courses />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="projects/spelling-bee" element={<SpellingBee />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/sora" element={<Sora />} />
-            <Route path="/blog/transformers" element={<Transformers />} />
-            <Route path="/notes" element={<Notes />} />
+            <Route path="/blogs" element={<NoteBlogCards type="blogs" />} />
+            <Route path="/notes" element={<NoteBlogCards type="notes" />} />
+
+            <Route path="/notes/:noteId" element={<NotesBlogs type="notes" />} />
+            <Route path="/blogs/:blogId" element={<NotesBlogs type="blogs" />} />
           </Routes>
-          <ClustrMapsWidget />
-        </Container>
-      </div>
-      <Footer />
-    </Router>
+          <Container as="main" className="py-4 px-3 mx-auto custom-padding">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Pane color={darkMode ? 'white' : 'black'}>
+                    <Biography />
+                    <WorkHistory />
+                    <News />
+                  </Pane>
+                }
+              />
+              <Route path="/courses" element={<Courses />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="projects/spelling-bee" element={<SpellingBee />} />
+            </Routes>
+            <ClustrMapsWidget />
+          </Container>
+        </Pane>
+        <Footer />
+      </Router>
+    </Pane>
   );
 };
 

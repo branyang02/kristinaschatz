@@ -104,14 +104,16 @@ body.dark-mode a {
   color: #fff;
 }
 
-body.dark-mode .project-card a {
-  color: #1976d2;
-}
-
 body.dark-mode a:hover,
 body.dark-mode a:focus {
   color: #bbb;
 }
+
+body.dark-mode .project-card a {
+  color: #1976d2;
+}
+
+
 
 .footer {
   text-align: center;

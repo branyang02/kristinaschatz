@@ -4,42 +4,9 @@
 Date: 5/1/2024 | Author: Brandon Yang
 </span>
 
-#### **Introduction**
+## **Introduction**
 
 These are my notes for Computer Systems and Organization 2 (CSO2) at the University of Virginia in the Spring 2024 semester taught by Charles Reiss. This note contains live code examples and explanations for various topics in the course.
-
-<!-- Example _**live**_, _**runnable**_ C code:
-
-```execute-c
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
-
-int main() {
-    pid_t pid;
-
-    // Create a new process
-    pid = fork();
-
-    if (pid == -1) {
-        // If fork() returns -1, an error occurred
-        perror("Failed to fork");
-        return 1;
-    } else if (pid > 0) {
-        // Parent process
-        printf("I am the parent process. PID: %d, Child PID: %d\n", getpid(), pid);
-        // Optionally, wait for the child to exit
-        wait(NULL);
-    } else {
-        // Child process
-        printf("I am the child process. PID: %d, Parent PID: %d\n", getpid(), getppid());
-        // Execute some code as the child
-    }
-
-    return 0;
-}
-``` -->
 
 <!-- ```tikz
 \begin{tikzpicture}
@@ -56,9 +23,9 @@ int main() {
 \end{tikzpicture}
 ``` -->
 
-#### **Building**
+## **Building**
 
-##### **Compilation**
+### **Compilation**
 
 - `clang` / `gcc` flags:
   - compile only: `clang -S foo.c` (output: `foo.s`)
@@ -68,13 +35,13 @@ int main() {
   - compile, assemble, and link: `clang foo.c bar.c` (output: `a.out`)
   - **compile, assemble, and link**: `clang foo.c bar.c -o myprog` (output: `myprog`)
 
-##### **Static Libraries**
+### **Static Libraries**
 
 - **Become part of executable (archive of .o files).**
 - Create a static library `libfoo.a`: `ar rcs libfoo.a foo.o bar.o`
 - Link with a static library: `cc -o myprog foo.c bar.c -L/path/to/lib -lfoo`
 
-##### **Dynamic Libraries**
+### **Dynamic Libraries**
 
 - **Loaded when executable starts.**
 - Create a shared library:
@@ -82,7 +49,7 @@ int main() {
   2. Link with `-shared` to create `libfoo.so`: `cc -shared -o libfoo.so foo.o bar.o`
 - Link with a shared library: `cc -o myprog foo.c bar.c -L/path/to/lib -lfoo`
 
-##### **Makefile**
+### **Makefile**
 
 ```makefile
 target: dependencies
@@ -144,7 +111,7 @@ In summary, Makefile follows the dependency graph to ensure all dependencies are
 
 </details>
 
-###### **Rules**
+#### **Rules**
 
 ```makefile
 CC = gcc
@@ -174,7 +141,7 @@ $(CC) $(CFLAGS) -o $@ -c $<
 
 - `%`: wildcard
 
-###### **Built-in rules**
+#### **Built-in rules**
 
 `make` has the "make `.o` from `.c`" rule built-in already, so:
 
@@ -210,19 +177,19 @@ main.o: main.c main.h extra.h
 extra.o: extra.c extra.h
 ```
 
-#### **Permissions**
+## **Permissions**
 
-##### **User IDs**
+### **User IDs**
 
 - **User ID (UID)**: unique identifier for a user.
 - Every process has a user ID.
 - User ID used to decide what process is authorized to do.
 
-##### **Group IDs**
+### **Group IDs**
 
 - **Group ID (GID)**: unique identifier for a group.
 
-##### **File Permissions**
+### **File Permissions**
 
 - 2 types
   - Access control list (ACL): list of permissions attached to an object.
@@ -236,7 +203,7 @@ extra.o: extra.c extra.h
   - **Write (w)**: modify the contents of the file.
   - **Execute (x)**: execute the file as a program. (For directories, search the directory.)
 
-###### **Permissions Encoding**
+#### **Permissions Encoding**
 
 - separated into 3 groups of 3 bits each.
   - user, group, other
@@ -246,7 +213,7 @@ extra.o: extra.c extra.h
     - **Octal notation**: `754`
     - **Binary notation**: `111101100`
 
-##### **Changing Permissions**
+### **Changing Permissions**
 
 - **Symbolic notation**:
   - `chmod u+x file`: add execute permission for user.
@@ -257,7 +224,7 @@ extra.o: extra.c extra.h
 - **Octal notation**:
   - `chmod 754 file`: set permissions to `rwxr-xr--`.
 
-###### **POSIX ACL Syntax**
+#### **POSIX ACL Syntax**
 
 - **Symbolic notation**:
   - `getfacl file`: get ACL for file.
@@ -270,15 +237,15 @@ extra.o: extra.c extra.h
   - `setfacl -m g::5 file`: set read and execute permission for group.
   - `setfacl -m o::4 file`: set read permission for other.
 
-###### **Superuser**
+#### **Superuser**
 
 - **Superuser**: user with special privileges (user ID = 0).
 - **Root**: superuser on Unix-like systems.
 - **sudo**: run a command as the superuser.
 
-#### **Kernel + System Calls**
+## **Kernel + System Calls**
 
-##### **Kernel Mode vs. User Mode**
+### **Kernel Mode vs. User Mode**
 
 - **Kernel mode**: unrestricted access to hardware.
 - **User mode**: restricted access to hardware.
@@ -293,12 +260,12 @@ extra.o: extra.c extra.h
     class="caption">We can view the combination of the limited user-mode hardware interface and system calls as collectively defining the interface user mode code sees.
 </span>
 
-##### **Implementation**
+### **Implementation**
 
 - **Mode bit**: bit in the processor that determines the mode. (0 = kernel mode, 1 = user mode)
 - **Mode Switch**: change from user mode to kernel mode using **exceptions**.
 
-##### **Exceptions**
+### **Exceptions**
 
 | Exceptions     | Classify by Cause                                                 | Classify by Result                                         |
 | -------------- | ----------------------------------------------------------------- | ---------------------------------------------------------- |
@@ -306,7 +273,7 @@ extra.o: extra.c extra.h
 | **Faults**     | An instruction failing to suceed in its execution.                | re-runs triggering instruction                             |
 | **Traps**      | caused by a special instruction whose purpose is to cause a trap  | runs instruction after triggering instruction              |
 
-##### **Handling Exceptions**
+### **Handling Exceptions**
 
 The basic mechanism for any exception to be handled is
 
@@ -324,7 +291,7 @@ The basic mechanism for any exception to be handled is
     class="caption"> The exception table is a table of pointers to exception handlers. The exception number is used as an index into the table to find the appropriate handler.
 </span>
 
-##### **System Calls**
+### **System Calls**
 
 - **System Call**: a way of communication from user mode to kernel mode.
   - Implemented as a `trap` with exception number `128`. The "action number" is passed into register `%rax`.
@@ -351,13 +318,13 @@ socket:
 
 </details>
 
-#### **Multitasking**
+## **Multitasking**
 
 - **Multitasking**: a generic term for having multiple processes running on a single machine.
 - **Preemptive Multitasking**: the operating system can interrupt a process and switch to another process.
 - **Cooperative Multitasking**: the process must voluntarily give up control.
 
-##### **Processes**
+### **Processes**
 
 - **Process**: an instance of a program in execution, acts like a _virtual machine_.
   - A process has its own program registers, condition codes, **virtual address space**, etc.
@@ -368,7 +335,7 @@ socket:
     class="caption"> The virtual address space is the memory that a process can access. It is an illusion of a program having its own memory.
 </span>
 
-###### **Context Switch**
+#### **Context Switch**
 
 - **Context Switch**: the process of saving the state of a process and loading the state of another process.
   1. OS starts running a process.
@@ -396,7 +363,7 @@ Suppose we have two processes, `A` and `B`, and a timer interrupt every `10ms`. 
 
 </details>
 
-###### **Process** vs. **Thread**
+#### **Process** vs. **Thread**
 
 - **Process**: an instance of a program in execution.
 - **Thread**: a process can have multiple threads of execution. Threads share the same **virtual address space**, but have their own **program registers**, **program counter**, condition codes, etc.
@@ -408,13 +375,13 @@ Suppose we have two processes, `A` and `B`, and a timer interrupt every `10ms`. 
       class="caption"> Threads within the same process share the same virtual address space but have their own program registers, program counter, condition codes, etc. (Source: javapoint, <a href="https://www.javatpoint.com/process-vs-thread">Process Vs. Thread</a>)
   </span>
 
-#### **Signals**
+## **Signals**
 
 - **Signal**: a way to notify a process that an event has occurred.
 - **Signal Handler**: a function that is called when a signal is received.
   - Ex. `SIGINT` (interrupt from keyboard), `SIGSEGV` (segmentation fault), `SIGKILL` (kill the process).
 
-##### **Signal vs. Exception**
+### **Signal vs. Exception**
 
 |                 | User code     | Kernel code   | Hardware               |
 | --------------- | ------------- | ------------- | ---------------------- |
@@ -437,14 +404,14 @@ Suppose we have two processes, `A` and `B`, and a timer interrupt every `10ms`. 
     class="caption"> Signals vs. Exceptions
 </span>
 
-##### **Forwarding exceptions to signals**
+### **Forwarding exceptions to signals**
 
 <img src="https://branyang02.github.io/images/signals.png" alt="Signals" style="display: block; max-height: 70%; max-width: 70%;">
 <span
       class="caption"> When `SIGINT` is received, the program enters kernel mode and starts running the exception handler for handing keyboard interrupts. The exception handler then forwards the signal to the user mode signal handler. The signal handler then runs in user mode. After the signal handler finishes, the program enters the kernel mode again to clean up and return to user mode.
 </span>
 
-##### **Common Signals**
+### **Common Signals**
 
 | Constant             | Likely Use                                                   |
 | -------------------- | ------------------------------------------------------------ |
@@ -457,7 +424,7 @@ Suppose we have two processes, `A` and `B`, and a timer interrupt every `10ms`. 
 | `SIGKILL`            | terminates process (**cannot be handled by process!**)       |
 | `SIGSTOP`            | suspends process (**cannot be handled by process!**)         |
 
-##### **Signals Setup**
+### **Signals Setup**
 
 - **Signal API**
   - `sigaction()`: set up a signal handler.
@@ -553,7 +520,7 @@ int main() {
 
 </details>
 
-##### **Handling multiple signals**
+### **Handling multiple signals**
 
 We can use function parameter `signum` to determine which signal was received.
 
@@ -582,7 +549,7 @@ int main() {
 }
 ```
 
-##### **Signal Handler Unsafety**
+### **Signal Handler Unsafety**
 
 <blockquote class="important">
 
@@ -596,7 +563,7 @@ Signal handlers should be **async-signal-safe**. This means that the functions c
 
 We can also avoid running the signal handler while it is already running by blocking the signal.
 
-##### **Blocking Signals**
+### **Blocking Signals**
 
 <img src="https://branyang02.github.io/images/block_signal.png" alt="Blocking Signals" style="display: block; max-height: 30%; max-width: 30%;">
 
@@ -615,9 +582,9 @@ sigprocmask(SIG_UNBLOCK, &sigint_as_set, NULL);
 - `sigsuspend()` temporarily unblocks a blocked signal just long enough to run its signal handler.
 - `sigwait()` waits for a signal to be received, blocking until the signal is received. This is used typically _instead of having signal handlers_.
 
-#### **Processes**
+## **Processes**
 
-##### **Process Creation**
+### **Process Creation**
 
 - `pid_t fork()`: creates a new process by duplicating the calling process.
   - Returns `0` to the child process, returns the **child process's PID** to the parent process.
@@ -671,7 +638,7 @@ The parent and child processes may run concurrently, so the order of output may 
 
 </blockquote>
 
-##### **Process Management**
+### **Process Management**
 
 - `waitpid()`: wait for a specific child process to exit.
 
@@ -740,7 +707,7 @@ if (child_pid == 0) {
 
 `exec` will simply run the new program and exit when the new program exits.
 
-##### **File Descriptors**
+### **File Descriptors**
 
 In Unix, every process has an array of _open file descriptions_ that point to open files.
 
@@ -761,7 +728,7 @@ A **file descriptor** is a non-negative integer that serves as the index into th
 - `int close(int fd)`: close a file descriptor, returning `0` on success.
   - `close()` simply deallocates the file descriptor, it does not delete the file, and does not affect other file descriptors.
 
-###### **Redirecting File Descriptors**
+#### **Redirecting File Descriptors**
 
 We can manually **redirect** file descriptors. For example, we can perform shell redirection like this:
 
@@ -770,7 +737,7 @@ We can manually **redirect** file descriptors. For example, we can perform shell
 - `echo foo > output.txt`
   - run `echo` with `stdout` redirected to `output.txt`.
 
-###### **Dup2**
+#### **Dup2**
 
 When we `fork` a process, the child process inherits the parent's file descriptors. However, we can **redirect** the child process's file descriptors using `dup2()`.
 
@@ -834,7 +801,7 @@ In this example, the child process redirects `stdout` to the file `output.txt` u
 </details>
 
 
-###### **Pipes**
+#### **Pipes**
 
 - **Pipe**: a unidirectional communication channel between two processes.
   - One process writes to the pipe, and the other reads from the pipe.
@@ -920,7 +887,7 @@ The parent process also waits for the child process to finish without using `wai
 
 
 
-#### **Virtual Memory**
+## **Virtual Memory**
 
 Every process has its own **virtual address space** when running a program.
 
@@ -941,7 +908,7 @@ We can split any memory address (both virtual and physical) into two parts: the 
 
 To access the **physical memory**, the OS provides a **page table** that maps virtual addresses to physical addresses. The **page number** is used as the key to index into the **Page Table**, and the **page offset** is used to access the data within the page.
 
-##### **Page Table**
+### **Page Table**
 
 <blockquote class="definition">
 
@@ -979,7 +946,7 @@ We have a **different** page table for each process.
 </blockquote>
 
 
-##### **Address Space Size**
+### **Address Space Size**
 
 <blockquote class="definition">
 
@@ -1113,7 +1080,7 @@ $$
 </details>
 
 
-##### **Permission Bits**
+### **Permission Bits**
 
 Usually, a page table entry contains permission bits that specify the access rights for the page. For example, the permission bits may include:
 
@@ -1135,7 +1102,7 @@ Usually, a page table entry contains permission bits that specify the access rig
 
 Permission bits allow page tables to enforce memory protection. For example, if a process tries to write to a read-only page, the OS can raise an exception.
 
-##### **Space On Demand**
+### **Space On Demand**
 
 <blockquote class="definition">
 
@@ -1179,7 +1146,7 @@ Suppose the next instruction `pushq %rbx` referes to the page table at VPN `0x7F
 
 </details>
 
-##### **Copy on Write**
+### **Copy on Write**
 
 <blockquote class="definition">
 
@@ -1279,9 +1246,9 @@ After allocating a copy, the OS reruns the write operation in the child process.
 
 </details>
 
-##### **Page Table Storage**
+### **Page Table Storage**
 
-###### **In Memory**
+#### **In Memory**
 
 One of the options is to store the page table as an array in memory. To do this, we need to have a base register that points to the start of the page table.
 
@@ -1334,7 +1301,7 @@ $$
 
 </blockquote>
 
-###### **Multi-Level Page Table**
+#### **Multi-Level Page Table**
 
 We can also store the page table as a **multi-level page table** in a _tree-like data structure_. This is useful when the page table is too large to fit in memory.
 
@@ -1472,11 +1439,11 @@ $$
 </details>
 
 
-#### **Cache**
+## **Cache**
 
 Make things go 🚀🚀🚀
 
-##### **Memory Hierarchy**
+### **Memory Hierarchy**
 
 The memory hierarchy is a structure that organizes memory into different levels based on their access speed and size. The memory hierarchy typically consists of:
 
@@ -1494,7 +1461,7 @@ Cache can also be shared among multiple cores. One typical configuration can be 
   Each core has its own L1 cache (instruction and data), and its own L2 cache. The L3 cache is shared among all cores.
 </span>
 
-###### **Assumptions**
+#### **Assumptions**
 
 We assume **temporal** and **spatial** locality when designing the memory hierarchy.
 
@@ -1505,7 +1472,7 @@ We assume **temporal** and **spatial** locality when designing the memory hierar
 
 </blockquote>
 
-##### **Cache Block**
+### **Cache Block**
 
 A **cache block** stores a block of data from the main memory. The size of the cache block is determined by the **block size**. The block size is typically a power of 2, such as 32 bytes or 64 bytes.
 
@@ -1516,7 +1483,7 @@ This is an example of a cache block that stores 2 bytes of data:
 Multiple cache blocks form the **cache table**. The cache table is essentially a lookup table to quickly retrieve data stored in the cache blocks, if it exists.
 
 
-##### **Direct-Mapped Cache**
+### **Direct-Mapped Cache**
 
 A **direct-mapped cache** is a type of cache where each block of main memory maps to exactly one block in the cache. Each row in the table is called a **set**, and each set contains bookeeping information such as the **tag**, **valid bit**, as well as a **cache block** that stores the data from the main memory.
 
@@ -1538,7 +1505,7 @@ Below is an example of a direct-mapped cache:
 
 In this example, the cache has 8 sets, and each set contains a valid bit, a tag, and a cache block. The cache block stores 2 bytes of data from the main memory.
 
-##### **Tag-Index-Offset**
+### **Tag-Index-Offset**
 
 To access a block in the cache, we need to split the memory address into three parts: the **tag**, the **index**, and the **offset**.
 
@@ -1552,7 +1519,7 @@ The **cache offset** is different from the **page offset**. The **cache offset**
 
 </blockquote>
 
-##### **Cache Formulas**
+### **Cache Formulas**
 
 <blockquote class="equation">
 
@@ -1624,7 +1591,7 @@ Therefore, the byte from memory address `0x1037` is stored at set `128` and cach
 
 
 
-##### **Access Pattern**
+### **Access Pattern**
 
 <blockquote class="definition">
 
@@ -1657,7 +1624,7 @@ If we have a **cache hit**:
 2. Retrieve the data from the cache.
 
 
-##### **Associative Cache**
+### **Associative Cache**
 
 In order to avoid having too many cache misses, we can use an **associative cache**. In an associative cache, each index in the cache can map to multiple cache blocks in the same set.
 
@@ -1690,7 +1657,7 @@ $$
 
 
 
-###### **Replacement Policies**
+#### **Replacement Policies**
 
 When we have a **cache miss** in an associative cache, we need to decide which block to evict from the set to make room for the new block. This decision is based on the **replacement policy**.
 
@@ -1709,7 +1676,7 @@ There are aos other replacement policies such as **First-In-First-Out** (**FIFO*
 
 
 
-##### **Write Policies**
+### **Write Policies**
 
 If the value is **NOT** in the cache, we can:
 - **write-allocate**: write value to cache, then load the rest of the **entire** block from memory.
@@ -1786,12 +1753,12 @@ When performing **write-allocate + write-back**, if we write to an _unallocated_
 
 
 
-###### **Faster Writes**
+#### **Faster Writes**
 
 A **write buffer** is a type of data buffer that can be used to hold data being written from the cache to main memory or to the next cache in the memory hierarchy to improve performance and reduce latency.
 
 
-##### **TLB**
+### **TLB**
 
 The **Translation Lookaside Buffer** (**TLB**) is a cache that stores the most recent translations from virtual memory to physical memory. The TLB is used to speed up the translation process by avoiding the need to access the page table in memory.
 
@@ -1837,7 +1804,7 @@ In a multi-level page table setup, we use the **entire** VPN to index into the T
 
 
 
-#### **Threads**
+## **Threads**
 
 - Motivation
   - **concurrency**: perform multiple tasks can be executed simultaneously.
@@ -1847,7 +1814,7 @@ We can run multiple threads in a single process to achieve concurrency and paral
 
 <img src="https://branyang02.github.io/images/single_vs_multi_threads.png" alt="Threads" style="display: block; max-height: 50%; max-width: 50%;">
 
-##### **Thread Creation**
+### **Thread Creation**
 
 We can use the `pthread_create` function to create a new thread in C. Below is a typical pattern for creating a new thread:
 
@@ -1934,7 +1901,7 @@ This is because the main thread could finish before the new thread finishes, cau
 
 
 
-##### **Race Conditions**
+### **Race Conditions**
 
 From the example above, we see that the output of the program is **non-deterministic**. This is because the two threads are **racing** to print their respective messages. This is known as a **race condition**.
 
@@ -1978,7 +1945,7 @@ Now, the output of the program prints the result from both threads.
 
 </details>
 
-##### **Passing Arguments to Threads**
+### **Passing Arguments to Threads**
 
 
 To pass in multiple arguments to the funciton, we can create a `struct` that contains all the arguments, and pass in a pointer to the `struct` as the argument. Below is an example:
@@ -2072,7 +2039,7 @@ int main() {
 </details>
 
 
-##### **Synchronization**
+### **Synchronization**
 
 When multiple threads access shared resources, we need to ensure that the threads do not interfere with each other when reading or writing to the shared resources. One way to achieve this is to use only **atomic operations** to access shared resources.
 
@@ -2084,7 +2051,7 @@ An **atomic operation** is an operation that is _indivisible_, meaning it cannot
 
 However, not all operations can be made _atomic_. We introduce the idea of **mutual exclusion** to ensure that only one thread can access a shared resource at a time.
 
-###### **Mutual Exclusion**
+#### **Mutual Exclusion**
 
 <blockquote class="definition">
 
@@ -2094,7 +2061,7 @@ However, not all operations can be made _atomic_. We introduce the idea of **mut
 
 We call code that only **ONE** thread could execute at a time a **critical section**. We can use **locks** to protect the critical section.
 
-##### **Locks**
+### **Locks**
 
 <blockquote class="definition">
 
@@ -2238,7 +2205,7 @@ In this example, we have `n` threads that wait at the barrier before continuing 
 </details>
 
 
-###### **Deadlocks**
+#### **Deadlocks**
 
 Although locks are useful for protecting shared resources, they can also lead to **deadlocks** if not used correctly.
 
@@ -2296,7 +2263,7 @@ A **deadlock** has 4 necessary conditions:
 4. **Circular Wait**: A cycle must exist in the resource allocation graph.
 
 
-###### **Avoiding Deadlocks vs. Breaking Deadlocks**
+#### **Avoiding Deadlocks vs. Breaking Deadlocks**
 
 When we are in a deadlock, we can break the deadlock by following these strategies:
 - **Lock Timeout**: Use a timeout when acquiring locks to prevent indefinite waiting.
@@ -2306,7 +2273,7 @@ To avoid deadlocks, we can follow these strategies:
 - **Lock Hierarchy**: Assign a unique ID to each lock and acquire locks in increasing order of ID.
 
 
-##### **Monitors**
+### **Monitors**
 
 A **monitor** is a high-level synchronization construct that provides a way to ensure that only one thread can execute a critical section at a time.
 
@@ -2391,7 +2358,7 @@ In the mean time, `thread2` that calls the `Finish` has been waiting for the `lo
 Now, back in `thread1`, it will return from the `pthread_cond_wait` and **reacquire** the `lock`, once `thread2` releases the `lock`. Since we are still in the `while` loop, `thread1` will check that `finished` is set to `true`, and continue with the program. Finally, `thread1` will release the `lock` before returning.
 
 
-###### **Producer Consumer Pattern**
+#### **Producer Consumer Pattern**
 
 The **producer/consumer** pattern is a synchronization pattern where one or more threads produce data and put it into a **shared buffer**, while one or more threads consume the data from the shared buffer.
 
@@ -2516,15 +2483,15 @@ In this example, we have a producer that produces items from `0` to `99`, and a 
 
 
 
-#### **Networking**
+## **Networking**
 
 coming soon...
 
-#### **Secure Channels**
+## **Secure Channels**
 
 Secure communication over an insecure channel involves safeguarding the data against unauthorized access and manipulation. The two primary concerns are confidentiality and authenticity, ensuring the data remains private and verifiable respectively.
 
-##### **Example Attack Scenarios**
+### **Example Attack Scenarios**
 
 - **Passive Attacks:**
   - **Eavesdropping:** An unauthorized party listens to the communications between Machine A and Machine B.
@@ -2537,7 +2504,7 @@ Secure communication over an insecure channel involves safeguarding the data aga
 
 </span>
 
-##### **Confidentiality**
+### **Confidentiality**
 
 - Confidentiality ensures that the message is only readable by the intended recipient.
 
@@ -2546,7 +2513,7 @@ Secure communication over an insecure channel involves safeguarding the data aga
 - Machine A sends a message to Machine B.
 - Machine M, acting as a machine-in-the-middle, intercepts and may alter the message pretending to be Machine B.
 
-###### **Symmetric Encryption Functions**
+#### **Symmetric Encryption Functions**
 
 Symmetric encryption uses a shared secret key for both encrypting and decrypting messages.
 
@@ -2597,7 +2564,7 @@ int main() {
 }
 ````
 
-###### **Asymmetric Encryption Functions**
+#### **Asymmetric Encryption Functions**
 
 Asymmetric encryption uses a pair of keys: a public key for encryption and a private key for decryption. The public key is shared, while the private key is kept secret.
 
@@ -2647,11 +2614,11 @@ In this example, we assumed that `k1` and `k2` are already given. In a real-worl
 
 </details>
 
-##### **Authenticity**
+### **Authenticity**
 
 - Authenticity ensures the message is actually sent by the claimed sender.
 
-###### **Message Authentication Code (MAC)**
+#### **Message Authentication Code (MAC)**
 
 MAC is used to verify the integrity and the authenticity of a message. It also ensures that the message has not been tampered with during transmission.
 
@@ -2738,7 +2705,7 @@ int main() {
 
 </details>
 
-###### **Digital Signatures**
+#### **Digital Signatures**
 
 Digital signatures are used to verify the authenticity of a message and ensure that the message has not been tampered with.
 
@@ -2754,7 +2721,7 @@ Digital signatures are used to verify the authenticity of a message and ensure t
 3. A sends the message and the signature to B.
 4. B verifies the signature using the public key: $V(key_{\text{public}}, message, signature)$.
 
-##### **Handling Replay Attacks**
+### **Handling Replay Attacks**
 
 Replay attacks involve an attacker intercepting a message and replaying it at a later time.
 
@@ -2776,7 +2743,7 @@ A nonce is a number used only once in a cryptographic communication. It is used 
 2. A sends the message and the nonce to B.
 3. B verifies the nonce and accepts the message. B generates a nonce: $N_B$.
 
-##### **Certificate**
+### **Certificate**
 
 Certificates are used to verify the authenticity of a public key.
 
@@ -2828,11 +2795,11 @@ Certificates are used to verify the authenticity of a public key.
 
 </details>
 
-#### **Pipeline**
+## **Pipeline**
 
 A pipeline is a technique used to overlap the execution of multiple instructions. It divides the instruction execution into multiple stages, allowing multiple instructions to be executed simultaneously.
 
-##### **Pipeline Stages**
+### **Pipeline Stages**
 
 - **Fetch**: fetch the instruction from memory.
 - **Decode**: decode the instruction.
@@ -2922,7 +2889,7 @@ We can increase pipeline performance by increasing the number of states. However
 
 Dividing the instruction execution into multiple stages can lead to **pipeline hazards**.
 
-##### **Pipeline Hazards**
+### **Pipeline Hazards**
 
 <blockquote class="definition">
 
@@ -2945,7 +2912,7 @@ We can see that the second instruction depends on the result of the first instru
 
 </details>
 
-###### **Data Hazard Solutions**
+#### **Data Hazard Solutions**
 
 <blockquote class="definition">
 
@@ -3050,7 +3017,7 @@ In this case, we will stall instruction 2's `decode` stage until the value of `%
 
 </details>
 
-##### **Control Hazard**
+### **Control Hazard**
 
 <blockquote class="definition">
 
@@ -3192,7 +3159,7 @@ Jump instructions are often used in loops, and they may take some time to resolv
 
 - **Branch Target Buffer (BTB)**: a cache that stores the target of the jump instruction.
 
-##### **Beyond Pipelining**
+### **Beyond Pipelining**
 
 - **Multiple Issue**: executing multiple instructions in parallel.
 
@@ -3215,7 +3182,7 @@ In the example above, we can see that the first two instructions can be executed
 
 We introduce OOO in the next section.
 
-#### **Out-of-Order (OOO)**
+## **Out-of-Order (OOO)**
 
 To increase the performance of the pipeline, we can execute instructions _out of order_. This allows us to execute independent instructions simultaneously, providing an _illusion_ that work is still done in order, even if they are not in the correct order.
 
@@ -3225,7 +3192,7 @@ To increase the performance of the pipeline, we can execute instructions _out of
 
 </blockquote>
 
-##### **OOO hazards**
+### **OOO hazards**
 
 <blockquote class="definition">
 
@@ -3257,7 +3224,7 @@ $$
 
 In the example above `movq $100, %r8` is executed out-of-order. However, when we execute the next instruction `addq %r13, %r8`, we have a **RAW hazard** since its `decode` stage will attempt to fetch from the forward value of `%r8` from the `execute` stage of the `addq %r10, %r8` instruction.
 
-##### **Register Version Tracking**
+### **Register Version Tracking**
 
 A simple solution to the RAW hazard is to add _version numbers_ to the registers. This way, we can track which version of the register is being used by the instruction. In the example above, we can perform the following steps to resolve the RAW hazard:
 
@@ -3293,7 +3260,7 @@ A **Write-After-Write (WAW)** data hazard occurs when the pipeline creates the p
 
 We can resolve WAW hazards by using **register renaming**.
 
-##### **Register Renaming**
+### **Register Renaming**
 
 Register renaming is a technique that involves renaming the registers in the instruction to avoid data hazards.
 
@@ -3361,7 +3328,7 @@ We can see that `%r8` uses the new physical register `%x20` in this instruction.
 
 </details>
 
-##### **OOO Pipeline Stages**
+### **OOO Pipeline Stages**
 
 <img src="https://branyang02.github.io/images/ooo.png" alt="OOO Pipeline" style="display: block; max-height: 70%; max-width: 70%;">
 
@@ -3403,7 +3370,7 @@ Finally, we have the `commit` stage **in order** where we write the result back 
 
 </details>
 
-##### **Instruction Queue and Dispatch Process**
+### **Instruction Queue and Dispatch Process**
 
 In the `rename` and `issue` stages, we follow the following steps:
 
@@ -3479,7 +3446,7 @@ Refer to the example above to see when `issue` stages occur for each instruction
 
 </details>
 
-##### **Execution Units (Functional Units)**
+### **Execution Units (Functional Units)**
 
 This is where the `execute` stage of the pipeline occurs. We can have multiple execution units to execute different types of instructions. For example, we can have:
 
@@ -3499,6 +3466,19 @@ We **only** update the scoreboard table after the entire **ALL** `execute` stage
 
 The `execute` stage typically _**forwards**_ the result to the `issue` stage of the next instruction.
 
-### **References**
+## **References**
 
 This note is based on [CS 3130 Spring 2024](https://www.cs.virginia.edu/~cr4bd/3130/S2024/) by Charles Reiss, used under CC BY-NC-SA 4.0.
+
+Reiss, Charles. _CS 3130 Spring 2024_. Licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0). Accessed May 1, 2024. Available at: https://www.cs.virginia.edu/~cr4bd/3130/S2024/
+
+## **License**
+
+The notes taken from the course _CS 3130 Spring 2024_ by Charles Reiss are licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License (CC BY-NC-SA 4.0). These notes are intended for non-commercial use and must be shared under the same license terms.
+
+<span class="caption">
+Yifan (Brandon) Yang, Released under the CC BY-NC-SA 4.0 License.
+</span>
+<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">
+    <img src="https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc-sa.png" alt="CC BY-NC-SA 4.0" style="display: block; max-height: 10%; max-width: 10%; margin-top: 0px" >
+</a>

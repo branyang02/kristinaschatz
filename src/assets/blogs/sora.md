@@ -240,7 +240,7 @@ The key idea behind diffusion models is to _diffuse_ the noise vectors to genera
 We will be discussing the difussion process and the U-Net architecture introduced in the paper
 _Denoising Diffusion Probabilistic Models_ by Ho et al.[^5].
 
-#### **Problem Definition**
+### **Problem Definition**
 
 Let's start by defining the problem of image generation.
 Suppose we have a dataset of images $$\textbf{X} = \{\textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_N\}$$, where $$\textbf{x}_i \in \mathbb{R}^{H \times W \times C}$$.
@@ -258,7 +258,7 @@ To learn the distribution $$p(\textbf{x})$$, we follow a two-step process:
 class="caption">Fig. 4: Foward(Top) and Backward(Bottom) Process. (Source: <a href="https://www.assemblyai.com/blog/diffusion-models-for-machine-learning-introduction/">AssemblyAI Blog</a>)
 </span>
 
-#### **Forward Process**
+### **Forward Process**
 
 We sample a training data point at random $$\textbf{x}_0 \sim q(\textbf{x}_0)$$ and progressively add more noise
 to the data point to generate a sequence of images $$\textbf{x}_{1:T} = \textbf{x}_1, \textbf{x}_2, \ldots, \textbf{x}_T$$ that is
@@ -294,7 +294,7 @@ We can visualize the forward process using the following **_interactive live_** 
 ${forward_diffusion}
 ```
 
-#### **Reverse Process**
+### **Reverse Process**
 
 The reverse process is the _denoising_ process that aims to recover the original image from the diffused image.
 It is defined as a Markov chain starting at $$p(\textbf{x}_T) = \mathcal{N}\left(\textbf{x}_T ; \textbf{0}, \textbf{I}\right)$$.
@@ -329,7 +329,7 @@ $$
 
 where $\theta$ are the learnable parameters of the model, and $p_{\theta}(\textbf{x}_0)$ is the likelihood of the original image $\textbf{x}_0$.
 
-#### **Training Setup**
+### **Training Setup**
 
 Our goal is to maximize the likelihood of the observed data under the model $p_{\theta}(\textbf{x}_0)$.
 Parameters $\theta$ can be obtained from maximum likelihood estimation (MLE):
@@ -379,6 +379,4 @@ $$
 [^3]: Dosovitskiy, A., et al. "An image is worth 16x16 words: Transformers for image recognition at scale," in arXiv preprint arXiv:2010.11929, 2020.
 [^4]: J. Ba, J. Kiros, G. Hinton. "Layer normalization," in arXiv preprint arXiv:1607.06450, 2016.
 [^5]: J. Ho, A. Jain, P. Abbeel. "Denoising diffusion probabilistic models," in Advances in neural information processing systems, vol. 33, pp. 6840–6851, 2020.
-[^6]:
-    R. O'Connor, "Introduction to Diffusion Models for Machine Learning," in AssemblyAI Blog, 2022.
-    `;
+[^6]: R. O'Connor, "Introduction to Diffusion Models for Machine Learning," in AssemblyAI Blog, 2022.

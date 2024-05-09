@@ -1,8 +1,10 @@
 import 'katex/dist/katex.min.css';
-import '../../../styles/blogPost.css';
+import '../styles/note-post.css';
 
-import { Pane } from 'evergreen-ui';
+import { majorScale, Pane, Spinner } from 'evergreen-ui';
+import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { useParams } from 'react-router-dom';
 import rehypeHighlight from 'rehype-highlight';
 import rehypeKatex from 'rehype-katex';
 import rehypeRaw from 'rehype-raw';
@@ -10,10 +12,13 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
-import BlogMenu from '../../../components/BlogMenu';
-import CodeBlock from '../../../components/CodeBlock';
-import StaticCodeBlock from '../../../components/StaticCodeBlock';
-import markdown from './cso2.md?raw';
+import CodeBlock from '../components/CodeBlock';
+import NoteToc from '../components/NoteToc';
+import StaticCodeBlock from '../components/StaticCodeBlock';
+import TikZ from '../components/TikZ';
+
+const NoteModules = import.meta.glob('../assets/notes/*.md', { as: 'raw' });
+const BlogModules = import.meta.glob('../assets/blogs/*.md', { as: 'raw' });
 
 type CodeProps = React.HTMLAttributes<HTMLElement> & {
   node?: unknown;
@@ -33,6 +38,9 @@ const components = {
       if (language.includes('execute-')) {
         return <CodeBlock initialCode={code} language={language.split('-').pop()} />;
       }
+      if (language === 'tikz') {
+        return <TikZ tikzScript={code} />;
+      }
       return <StaticCodeBlock code={code} language={language} />;
     } else {
       return (
@@ -51,14 +59,44 @@ function processMarkdown(markdownContent: string): string {
   return processedContent;
 }
 
-const markdownContent = processMarkdown(markdown);
+const NotesBlogs = ({ type }: { type: string }) => {
+  const params = useParams();
+  const [markdownContent, setMarkdownContent] = useState<string>('');
 
-const CSO2 = () => {
+  const contentId = type === 'notes' ? params.noteId : params.blogId;
+
+  useEffect(() => {
+    const fetchNote = async () => {
+      const modules = type === 'notes' ? NoteModules : BlogModules;
+      for (const path in modules) {
+        if (path.includes(contentId as string)) {
+          const rawMDString = String(modules[path]);
+          setMarkdownContent(processMarkdown(rawMDString));
+        }
+      }
+    };
+
+    fetchNote();
+  }, [contentId]);
+
+  if (!markdownContent) {
+    return (
+      <Pane
+        display="flex"
+        padding={majorScale(10)}
+        justifyContent="center"
+        height="100vh"
+      >
+        <Spinner />
+      </Pane>
+    );
+  }
+
   return (
     <div className="overall-container">
       <Pane className="mw-page-container-inner">
         <Pane className="vector-column-start">
-          <BlogMenu markdownContent={markdownContent} />
+          <NoteToc markdownContent={markdownContent} />
         </Pane>
         <Pane className="mw-content-container">
           <Pane className="blog-content">
@@ -76,4 +114,4 @@ const CSO2 = () => {
   );
 };
 
-export default CSO2;
+export default NotesBlogs;
