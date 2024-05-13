@@ -17,7 +17,7 @@ import {
 import { useCallback, useRef, useState } from 'react';
 
 import { useDarkMode } from '../context/DarkModeContext';
-import { runCCode, RunCodeResponse, runPythonCode } from '../service/api';
+import { runCode, RunCodeResponse } from '../service/api';
 
 interface CodeBlockProps {
   initialCode: string;
@@ -33,7 +33,6 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ initialCode, language = 'python' 
   const editorRef = useRef<ReactCodeMirrorRef>(null);
   const { darkMode } = useDarkMode();
 
-  const runCode = language === 'c' ? runCCode : runPythonCode;
   const languageCode = language === 'c' ? cpp() : python();
 
   const onChange = useCallback((value: string) => {
@@ -43,7 +42,7 @@ const CodeBlock: React.FC<CodeBlockProps> = ({ initialCode, language = 'python' 
   const runCodeAsync = async () => {
     setIsLoading(true);
     try {
-      const data: RunCodeResponse = await runCode(code);
+      const data: RunCodeResponse = await runCode(code, language);
       if (
         data.output.trim().startsWith('Traceback') ||
         data.output.trim().startsWith('File') ||
