@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import resumePDF from '../assets/resume.pdf';
 import { useDarkMode } from '../context/DarkModeContext';
 
-function NavBar() {
+const NavBar = () => {
   const { darkMode } = useDarkMode();
   const navigate = useNavigate();
 
@@ -176,6 +176,6 @@ function NavBar() {
       />
     </>
   );
-}
+};
 
 export default NavBar;

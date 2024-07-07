@@ -15,7 +15,7 @@ type Dictionary = {
   word: string;
 };
 
-function App() {
+const App = () => {
   const [gameStarted, setGameStarted] = useState(false);
   const [players, setPlayers] = useState<Player[]>([]);
   const [dictionary, setDictionary] = useState<Dictionary[]>([]);
@@ -57,6 +57,6 @@ function App() {
       </Grid>
     </Grid>
   );
-}
+};
 
 export default App;
