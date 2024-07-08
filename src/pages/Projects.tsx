@@ -78,8 +78,14 @@ const Projects: React.FC = () => {
         }
       ],
       description:
-        "GLOMA is a diffusion based text-image editing model for robotic agents to generate goal images for manipulation tasks. GLOMA uses a ViT and LLM to extract corresponding objects from the image based on the text prompt, and then generates a goal image through image diffusion.",
+        "GLOMA is a diffusion based text-image editing model for robotic agents to generate goal images for manipulation tasks. GLOMA uses a ViT and LLM to extract corresponding objects from the image based on the text prompt, and then generates a goal image through image diffusion. GitHub",
       link: 'https://branyang02.github.io/images/gloma.png',
+      metaLinks: [
+        {
+          name: "GitHub",
+          link: "https://github.com/branyang02/GLOMA"
+        },
+      ],
       techStack: [],
     },
     {
@@ -88,6 +94,12 @@ const Projects: React.FC = () => {
       description:
         'Multi-Agent Reinforcement Learning (MARL) in IsaacGym for Panda Robots.',
       link: 'https://github.com/branyang02/PandaFactory/tree/main',
+      metaLinks: [
+        {
+          name: "GitHub",
+          link: "https://github.com/branyang02/PandaFactory/"
+        },
+      ],
       techStack: ['Python', 'PyTorch', 'Nvidia IsaacGym'],
     },
     {
@@ -95,12 +107,22 @@ const Projects: React.FC = () => {
       title: 'Notie',
       description: 'A markdown note taking app that features live coding, TikZ, and LaTeX support.',
       link: 'https://github.com/branyang02/Notie',
+      metaLinks: [
+        {
+          name: "GitHub",
+          link: "https://github.com/branyang02/Notie"
+        },
+        {
+          name: "Live Demo",
+          link: "https://notie-nine.vercel.app/"
+        }
+      ],
       techStack: ['TypeScript', 'React', 'Python', 'Flask'],
     },
 
     {
       image: 'https://branyang02.github.io/images/smart_oh.png',
-      title: 'Smart OH (VTHacks Winner)',
+      title: 'Smart OH (VTHacks)',
       authors: [
         {
           name: "Edward Wei",
@@ -122,6 +144,16 @@ const Projects: React.FC = () => {
       description:
         'AI powered office hour queue system that streamlines the process of office hours.',
       link: 'https://github.com/ewei2406/SmartOH',
+      metaLinks: [
+        {
+          name: "GitHub",
+          link: "https://github.com/ewei2406/SmartOH"
+        },
+      {
+          name: "DevPost",
+          link: "https://devpost.com/software/smartoh"
+        }
+      ],
       techStack: [
         'Python',
         'TypeScript',
@@ -138,6 +170,12 @@ const Projects: React.FC = () => {
       description:
         'An AI Places Recommendation app that recommends based on your calendar.',
       link: 'https://github.com/branyang02/Django-AI-Calendar-Map',
+      metaLinks: [
+        {
+          name: "GitHub",
+          link: "https://github.com/branyang02/Django-AI-Calendar-Map"
+        },
+      ],
       techStack: ['Python', 'JavaScript', 'Django', 'OpenAI', 'Google Cloud', 'Heroku'],
     },
     {
@@ -145,6 +183,12 @@ const Projects: React.FC = () => {
       title: 'Multi-agent Tetris AI',
       description: 'A Multi-agent Tetris AI trained using Reinforcement Learning.',
       link: 'https://github.com/branyang02/multiagent_tetris',
+      metaLinks: [
+        {
+          name: "GitHub",
+          link: "https://github.com/branyang02/multiagent_tetris"
+        },
+      ],
       techStack: ['Python', 'PyTorch'],
     },
     {
@@ -153,6 +197,12 @@ const Projects: React.FC = () => {
       description: 'Fun Party Spelling Bee Game with score counter and word list.',
       techStack: ['TypeScript', 'React'],
       link: '/projects/spelling-bee',
+      metaLinks: [
+        {
+          name: "Live Website",
+          link: "/projects/spelling-bee"
+        },
+      ],
     },
     {
       image: "https://branyang02.github.io/images/3dgs.jpg",
@@ -209,6 +259,18 @@ const Projects: React.FC = () => {
                 </Text>
               )}
               <Text size={400} marginTop={minorScale(2)} color={darkMode ? 'white' : 'black'} display="block">{project.description}</Text>
+              {project.metaLinks && (
+                <Text size={400} marginTop={minorScale(1)} color={darkMode ? 'white' : 'black'} display="block">
+                  {project.metaLinks.map((metaLink, metaLinkIndex) => (
+                    <React.Fragment key={metaLinkIndex}>
+                      <a href={metaLink.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                        {metaLink.name}
+                      </a>
+                      {metaLinkIndex < project.metaLinks.length - 1 && ' / '}
+                    </React.Fragment>
+                  ))}
+                </Text>
+              )}
               <Pane display="flex" flexWrap="wrap" marginTop={minorScale(2)}>
                 {project.techStack && project.techStack.map((tech, techIndex) => (
                   <Pane key={techIndex} display="flex" alignItems="center" marginRight={majorScale(1)}>

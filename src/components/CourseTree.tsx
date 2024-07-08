@@ -24,6 +24,12 @@ const orgChart = {
                 Achievement: "0.038% away from A+ 💯",
               },
             },
+            {
+              name: "Cybersecurity",
+              attributes: {
+                Achievement: "Hashed stuff"
+              },
+            }
           ],
         },
         {
@@ -85,6 +91,12 @@ const orgChart = {
                       name: 'Natural Language Processing (G)',
                       attributes: {
                         Achievement: 'LLM is cool 🤖🤖🤖',
+                      },
+                    },
+                    {
+                      name: "Human Robot Interaction (HRI) (G)",
+                      attributes: {
+                        Achievement: "Robot moves 🚀🚀🚀",
                       },
                     },
                     {
