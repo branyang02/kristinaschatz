@@ -1,14 +1,14 @@
 /* CourseTree.css */
 .node_root>circle {
-  fill: #35a58c;
+  fill: #232D4B;
 }
 
 .node_branch>circle {
-  fill: #35a58c;
+  fill: #232D4B;
 }
 
 .node_leaf>circle {
-  fill: #35a58c;
+  fill: #232D4B;
 }
 
 body.dark-mode .rd3t-label__title {
