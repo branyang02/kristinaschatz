@@ -9,21 +9,19 @@ const orgChart = {
     {
       name: 'Introduction to Programming',
       attributes: {
-        Achievements: 'Created a spaceship dropdown game using PyGame.',
-        Language: 'Python',
+        Achievements: 'Python goes 🚀🚀🚀',
       },
       children: [
         {
-          name: 'Computer Systems & Organization',
+          name: 'Computer Systems & Organization I ',
           attributes: {
-            Achievement: "Lab Lead Teaching Assistant for Spring '23",
-            Language: 'C, x86 Assembly',
+            Achievement: "Lab Lead TA for Spring '23 🧑‍🏫️",
           },
           children: [
             {
-              name: 'Computer Systems & Architecture',
+              name: 'Computer Systems & Organization II',
               attributes: {
-                Status: 'In Progress',
+                Achievement: "0.038% away from A+ 💯",
               },
             },
           ],
@@ -31,16 +29,13 @@ const orgChart = {
         {
           name: 'Software Development Essentials',
           attributes: {
-            Achievement: 'Created Full-Stack Course Review App in Java.',
-            Language: 'Java, SQL, Gradle, Mockito, JavaFX, Junit5',
+            Achievement: 'Java is cool 👨‍💻. OOP is cool 👨‍💻.',
           },
           children: [
             {
               name: 'Advanced Software Development',
               attributes: {
-                Achievement: 'Created Full-Stack AI Map Assistant in Django.',
-                Tools:
-                  'Django, Python, HTML, CSS, JavaScript, Bootstrap, Heroku, PostgreSQL, Git',
+                Achievement: 'Python Django JavaScript HTML 😤😤😤',
               },
             },
           ],
@@ -48,14 +43,14 @@ const orgChart = {
         {
           name: 'Discrete Mathematics',
           attributes: {
-            Language: 'Lean Language',
+            Language: 'Lean Language 😵‍💫😵‍💫😵‍💫',
           },
           children: [
             {
               name: 'Theory of Computation',
               attributes: {
-                Language: 'LaTeX, Java',
-                Achievement: 'Created a NFA simulator in Java.',
+                Achievement: 'Achieved Turing Completeness 🤖🤖🤖',
+                Role: "TA for Spring '24 🧑‍🏫️",
               },
             },
           ],
@@ -69,53 +64,40 @@ const orgChart = {
             {
               name: 'Algorithms',
               attributes: {
-                Language: 'Python, Java, LaTeX',
+                Language: 'Python, Java',
               },
               children: [
                 {
                   name: 'Optimization',
                   attributes: {
-                    Achievement: 'Implemented NN from Scratch.',
-                    Algorithms:
-                      "Newton's Method, Projected GD, Mirror Descent, Proximal GD",
-                    Math: 'KKT, Conjugate Functions, L-Smoothness, Strong Convexity',
-                    Language: 'Python, Numpy',
+                    Achievement: 'KL KL KL KL',
                   },
                 },
                 {
                   name: 'Machine Learning',
                   attributes: {
                     Description:
-                      'Linear + Logistic Regression, K-Means, SVMs, Bayesian Learning, ANN, CNN, RNN + LSTM, LLM, VAE',
-                    Language: 'Python, PyTorch, TensorFlow, Pandas, Jupyter',
+                      'SVM, BN, ANN, CNN, RNN + LSTM, LLM, VAE',
+                    Role: "TA for Fall '24 🧑‍🏫️",
                   },
                   children: [
                     {
-                      name: 'Natural Language Processing',
+                      name: 'Natural Language Processing (G)',
                       attributes: {
-                        Status: 'In Progress',
+                        Achievement: 'LLM is cool 🤖🤖🤖',
                       },
                     },
                     {
-                      name: 'Probabilistic ML',
+                      name: 'Probabilistic ML (G)',
                       attributes: {
-                        Status: 'In Progress',
+                        Achievement: 'Bayesian Bayesian BAYESIAN 🦦🦦🦦',
                       },
                     },
                     {
-                      name: 'Deep Learning',
-                      attributes: {
-                        Status: 'In Progress',
-                      },
-                    },
-                    {
-                      name: 'Reinforcement Learning',
+                      name: 'Reinforcement Learning (G)',
                       attributes: {
                         Achievement:
-                          'Created a Multi-Agent RL agent to play Tetris. Achieved SOTA performance in multiplayer Tetris.',
-                        Description:
-                          'Multi-Armed Bandits, MDPs, DP, Monte-Carlo, TD, Policy Gradient, Approximation Methods, Deep RL, Offline RL',
-                        Language: 'Python, PyTorch',
+                          'MDP, DP, Monte-Carlo, TD, Blah Blah Blah 🤖🤖🤖',
                       },
                     },
                   ],
@@ -128,22 +110,30 @@ const orgChart = {
     },
     {
       name: 'Multivariable Calculus',
+      attributes: {
+        Achievement: '🧮 🧮 🧮'
+      },
       children: [
         {
           name: 'Linear Algebra',
           attributes: {
-            Language: 'MATLAB',
+            Language: 'MATLAB 👎👎👎',
           },
           children: [
             {
               name: 'Probability',
               attributes: {
                 Achievement: 'Created a Monte Carlo Simulation.',
-                Language: 'Python',
               },
             },
           ],
         },
+        {
+          name: "Ordinary Differential Equations",
+          attributes: {
+            Achievement: "ODEEEE"
+          }
+        }
       ],
     },
   ],
