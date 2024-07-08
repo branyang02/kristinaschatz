@@ -61,11 +61,6 @@ const Projects: React.FC = () => {
 
   const projects = [
     {
-      image: "https://branyang02.github.io/images/3dgs.jpg",
-      title: "3DGS Language Instructed Editing",
-      description: "Coming soon...",
-    },
-    {
       image: 'https://branyang02.github.io/images/gloma_diagram.png',
       title: 'GLOMA: Grounded Location for Object Manipulation',
       authors: [
@@ -158,6 +153,11 @@ const Projects: React.FC = () => {
       description: 'Fun Party Spelling Bee Game with score counter and word list.',
       techStack: ['TypeScript', 'React'],
       link: '/projects/spelling-bee',
+    },
+    {
+      image: "https://branyang02.github.io/images/3dgs.jpg",
+      title: "3DGS Language Instructed Editing",
+      description: "Coming soon...",
     },
   ];
 
