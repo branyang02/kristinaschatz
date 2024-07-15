@@ -2,14 +2,16 @@ import '../styles/WorkHistory.css';
 
 const WorkHistory = () => {
   return (
-    <div className="container mt-5 mb-5">
-      <div className="row">
-        <div className="col-md-8">
-          <h3>Experience</h3>
-          <ul className="timeline">{renderListItems()}</ul>
+    <>
+      <div className="container mt-3 mb-5">
+        <h3>Experience</h3>
+        <div className="row">
+          <div className="col-md-8">
+            <ul className="timeline">{renderListItems()}</ul>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -17,40 +19,61 @@ const renderListItems = () => {
   const listItems = [
     {
       date: 'Jan 2024 - Current',
-      text: <span>TA for Biology 101 (UVA)</span>,
+      text: <span>Organic Chemistry Teaching Assistant (UVA)</span>,
     },
     {
       date: 'May 2022 - Current',
       text: (
         <span>
-          Volunteer at{' '}
-          <a href="https://www.virginia.edu/">University of Virginia Health System</a>
+          Research Assistant at{' '}
+          <a href="https://www.arandjeloviclab.com/">Arandjelovic Lab</a>
         </span>
       ),
     },
     {
-      date: 'Oct 2023 - Current',
+      date: 'Jan 2024 - Current',
       text: (
         <span>
           EMT at{' '}
-          <a href="https://www.virginia.edu/">Charlottesville-Albemarle Rescue Squad</a>
+          <a href="https://www.westernrescue.org/">Western Albemarle Rescue Squad</a>
         </span>
       ),
     },
     {
-      date: 'May 2023 - Aug 2023',
+      date: 'Sep 2023 - Current',
       text: (
         <span>
-          Shadowing Doctor at <a href="https://www.sjia.org/">SJIA</a>
+          Hospice Volunteer at{' '}
+          <a href="https://www.heartlandhospice.com/">Heartland Hospice</a>
         </span>
       ),
     },
     {
-      date: 'Jan 2023 - May 2023',
+      date: 'Aug 2023 - Current',
       text: (
         <span>
-          Refugee Support Volunteer at{' '}
-          <a href="https://www.virginia.edu/">International Rescue Committee</a>
+          ESL Class Volunteer at{' '}
+          <a href="https://www.rescue.org/united-states/charlottesville-va">
+            International Rescue Committee
+          </a>
+        </span>
+      ),
+    },
+    {
+      date: 'Feb 2023 - July 2023',
+      text: (
+        <span>
+          Volunteer at{' '}
+          <a href="https://www.sentara.com/">Sentara Martha Jefferson Hospital</a>
+        </span>
+      ),
+    },
+    {
+      date: 'June 2022 - Dec 2022',
+      text: (
+        <span>
+          Patient Transporter at{' '}
+          <a href="https://uvahealth.com/">UVA University Hospital</a>
         </span>
       ),
     },

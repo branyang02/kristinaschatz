@@ -8,7 +8,6 @@ import Biography from './components/Biography';
 import ClustrMapsWidget from './components/ClusterMapsWidget';
 import Footer from './components/Footer';
 import NavBar from './components/NavBar';
-import WorkHistory from './components/WorkHistory';
 import NoteBlogCards from './pages/NoteBlogCards';
 import NotesBlogs from './pages/NotesBlogs';
 import Projects from './pages/Projects';

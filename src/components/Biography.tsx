@@ -11,7 +11,7 @@ const Biography: React.FC = () => {
     <Pane className="biography-container">
       <Pane className="biography-text">
         <h3>Biography</h3>
-        <Text color="black">
+        <Text color="black" size={500}>
           I am a pre-med student at the{' '}
           <a href="https://www.virginia.edu/">University of Virginia</a> majoring in
           cognitive science and minoring in Chinese. I am currently working as a research

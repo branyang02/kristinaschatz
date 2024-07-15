@@ -49,9 +49,6 @@ const Projects: React.FC = () => {
 
   return (
     <Pane>
-      <Heading size={900} marginBottom={16}>
-        Projects
-      </Heading>
       <Pane display="flex" flexDirection="column" alignItems="center">
         {projects.map((project, index) => (
           <Pane

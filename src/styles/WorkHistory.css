@@ -34,4 +34,5 @@ ul.timeline > li:before {
 
 .container {
   text-align: left;
+  padding-left: 0px;
 }
