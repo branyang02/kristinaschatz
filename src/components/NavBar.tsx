@@ -34,6 +34,9 @@ const NavBar = () => {
       <Nav.Link as={Link} to="/blogs" className="navbar-text" style={{ color: 'black' }}>
         Blog
       </Nav.Link>
+      <Nav.Link as={Link} to="/resume" className="navbar-text" style={{ color: 'black' }}>
+        Resume
+      </Nav.Link>
       <Nav.Link
         as={Link}
         to="/projects"
@@ -66,6 +69,14 @@ const NavBar = () => {
               }}
             >
               Blog
+            </Menu.Item>
+            <Menu.Item
+              onSelect={() => {
+                handleSelect('/resume');
+                close();
+              }}
+            >
+              Resume
             </Menu.Item>
             <Menu.Item
               onSelect={() => {

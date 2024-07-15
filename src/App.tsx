@@ -12,11 +12,12 @@ import WorkHistory from './components/WorkHistory';
 import NoteBlogCards from './pages/NoteBlogCards';
 import NotesBlogs from './pages/NotesBlogs';
 import Projects from './pages/Projects';
+import Resume from './pages/Resume';
 
 const App = () => {
   return (
     <Pane
-      backgroundColor="white"
+      background="tint2"
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -39,11 +40,11 @@ const App = () => {
                 element={
                   <Pane color="black">
                     <Biography />
-                    <WorkHistory />
                   </Pane>
                 }
               />
               <Route path="/projects" element={<Projects />} />
+              <Route path="/resume" element={<Resume />} />
             </Routes>
             <ClustrMapsWidget />
           </Container>

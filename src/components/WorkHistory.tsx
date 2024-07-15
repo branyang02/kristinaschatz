@@ -5,7 +5,7 @@ const WorkHistory = () => {
     <div className="container mt-5 mb-5">
       <div className="row">
         <div className="col-md-8">
-          <h4>Experience</h4>
+          <h3>Experience</h3>
           <ul className="timeline">{renderListItems()}</ul>
         </div>
       </div>

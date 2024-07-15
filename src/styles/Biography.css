@@ -3,6 +3,7 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
+  gap: 50px;
 }
 
 .biography-image img {
