@@ -17,8 +17,6 @@ import {
 import { majorScale, minorScale, Pane, Text } from 'evergreen-ui';
 import React from 'react';
 
-import { useDarkMode } from '../context/DarkModeContext';
-
 function getLogo(tech: string) {
   switch (tech) {
     case 'React':
@@ -57,8 +55,6 @@ function getLogo(tech: string) {
 }
 
 const Projects: React.FC = () => {
-  const { darkMode } = useDarkMode();
-
   const projects = [
     {
       image: 'https://branyang02.github.io/images/gloma_diagram.png',
@@ -223,9 +219,9 @@ const Projects: React.FC = () => {
             display="flex"
             flexDirection="row"
             padding={16}
-            background={darkMode ? '#333' : 'white'}
+            background={'white'}
             borderRadius={4}
-            color={darkMode ? 'white' : 'black'}
+            color={'black'}
           >
             <Pane flex={1} marginRight={16}>
               {project.image && (
@@ -258,7 +254,7 @@ const Projects: React.FC = () => {
                   <Text
                     size={600}
                     marginTop={minorScale(2)}
-                    color={darkMode ? 'white' : 'black'}
+                    color={'black'}
                     display="block"
                     fontWeight="bold"
                   >
@@ -269,7 +265,7 @@ const Projects: React.FC = () => {
                 <Text
                   size={600}
                   marginTop={minorScale(2)}
-                  color={darkMode ? 'white' : 'black'}
+                  color={'black'}
                   display="block"
                   fontWeight="bold"
                 >
@@ -280,7 +276,7 @@ const Projects: React.FC = () => {
                 <Text
                   size={400}
                   marginTop={minorScale(1)}
-                  color={darkMode ? 'white' : 'black'}
+                  color={'black'}
                   display="block"
                 >
                   {project.authors.map((author, authorIndex) => (
@@ -301,19 +297,14 @@ const Projects: React.FC = () => {
                   ))}
                 </Text>
               )}
-              <Text
-                size={400}
-                marginTop={minorScale(2)}
-                color={darkMode ? 'white' : 'black'}
-                display="block"
-              >
+              <Text size={400} marginTop={minorScale(2)} color={'black'} display="block">
                 {project.description}
               </Text>
               {project.metaLinks && (
                 <Text
                   size={400}
                   marginTop={minorScale(1)}
-                  color={darkMode ? 'white' : 'black'}
+                  color={'black'}
                   display="block"
                 >
                   {project.metaLinks.map((metaLink, metaLinkIndex) => (
@@ -341,11 +332,7 @@ const Projects: React.FC = () => {
                       marginRight={majorScale(1)}
                     >
                       {getLogo(tech)}
-                      <Text
-                        size={300}
-                        marginLeft={minorScale(1)}
-                        color={darkMode ? 'white' : 'black'}
-                      >
+                      <Text size={300} marginLeft={minorScale(1)} color={'black'}>
                         {tech}
                       </Text>
                     </Pane>

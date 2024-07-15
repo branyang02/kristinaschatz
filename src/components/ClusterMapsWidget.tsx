@@ -6,7 +6,7 @@ const ClustrMapsWidget: React.FC = () => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src =
-      '//clustrmaps.com/globe.js?d=6MXBdOLIqZWsz6HFTpUAWlLt0thRcfYCvStIL1FCwxE';
+      '//clustrmaps.com/map_v2.js?d=Ilqjk1tJ5O0ieU76SAX9ccWMub1zGkRN32wPsRRoxnc&cl=ffffff&w=a';
     script.id = 'clstr_globe';
 
     const iframeDocument =

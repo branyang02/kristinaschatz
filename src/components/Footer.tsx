@@ -3,11 +3,8 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Pane } from 'evergreen-ui';
 
-import { useDarkMode } from '../context/DarkModeContext';
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const { darkMode } = useDarkMode();
 
   return (
     <Pane
@@ -16,7 +13,7 @@ const Footer = () => {
       alignItems="center"
       justifyContent="center"
       gap="20px"
-      color={darkMode ? 'white' : 'black'}
+      color={'black'}
     >
       <p>© {currentYear} Brandon (Yifan) Yang</p>
       <a className="icon" href="mailto:jqm9ba@virginia.edu" title="Email">

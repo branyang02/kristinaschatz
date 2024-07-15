@@ -8,10 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link, To } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
-import { useDarkMode } from '../context/DarkModeContext';
-
 const NavBar = () => {
-  const { darkMode } = useDarkMode();
   const navigate = useNavigate();
 
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -31,27 +28,17 @@ const NavBar = () => {
 
   const desktopMenu = (
     <Nav className="justify-content-end">
-      <Nav.Link
-        as={Link}
-        to="/"
-        className="navbar-text"
-        style={{ color: darkMode ? 'white' : 'black' }}
-      >
+      <Nav.Link as={Link} to="/" className="navbar-text" style={{ color: 'black' }}>
         Home
       </Nav.Link>
-      <Nav.Link
-        as={Link}
-        to="/blogs"
-        className="navbar-text"
-        style={{ color: darkMode ? 'white' : 'black' }}
-      >
+      <Nav.Link as={Link} to="/blogs" className="navbar-text" style={{ color: 'black' }}>
         Blog
       </Nav.Link>
       <Nav.Link
         as={Link}
         to="/projects"
         className="navbar-text"
-        style={{ color: darkMode ? 'white' : 'black' }}
+        style={{ color: 'black' }}
       >
         Projects
       </Nav.Link>
@@ -114,7 +101,7 @@ const NavBar = () => {
             as={Link}
             to="/"
             style={{
-              color: darkMode ? 'white' : 'black',
+              color: 'black',
             }}
             className="navbar-text"
           >
@@ -125,9 +112,9 @@ const NavBar = () => {
       </Navbar>
       <hr
         style={{
-          backgroundColor: darkMode ? 'white' : 'black',
-          color: darkMode ? 'white' : 'black',
-          borderColor: darkMode ? 'white' : 'black',
+          backgroundColor: 'black',
+          color: 'black',
+          borderColor: 'black',
         }}
       />
     </>
