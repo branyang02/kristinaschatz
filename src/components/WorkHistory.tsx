@@ -4,7 +4,7 @@ const WorkHistory = () => {
   return (
     <>
       <div className="container mt-3 mb-5">
-        <h3>Experience</h3>
+        <h3>Experiences</h3>
         <div className="row">
           <div className="col-md-8">
             <ul className="timeline">{renderListItems()}</ul>
@@ -17,10 +17,6 @@ const WorkHistory = () => {
 
 const renderListItems = () => {
   const listItems = [
-    {
-      date: 'Jan 2024 - Current',
-      text: <span>Organic Chemistry Teaching Assistant (UVA)</span>,
-    },
     {
       date: 'May 2022 - Current',
       text: (
@@ -40,6 +36,26 @@ const renderListItems = () => {
       ),
     },
     {
+      date: 'Jan 2024 - Current',
+      text: (
+        <span>
+          Organic Chemistry Teaching Assistant at{' '}
+          <a href="https://www.virginia.edu/">UVA</a>
+        </span>
+      ),
+    },
+    {
+      date: 'Aug 2023 - Current',
+      text: (
+        <span>
+          ESL Classroom Assistant at{' '}
+          <a href="https://www.rescue.org/united-states/charlottesville-va">
+            International Rescue Committee
+          </a>
+        </span>
+      ),
+    },
+    {
       date: 'Sep 2023 - Current',
       text: (
         <span>
@@ -49,13 +65,11 @@ const renderListItems = () => {
       ),
     },
     {
-      date: 'Aug 2023 - Current',
+      date: 'June 2022 - Dec 2022',
       text: (
         <span>
-          ESL Class Volunteer at{' '}
-          <a href="https://www.rescue.org/united-states/charlottesville-va">
-            International Rescue Committee
-          </a>
+          Patient Transporter at{' '}
+          <a href="https://uvahealth.com/">UVA Health</a>
         </span>
       ),
     },
@@ -63,17 +77,8 @@ const renderListItems = () => {
       date: 'Feb 2023 - July 2023',
       text: (
         <span>
-          Volunteer at{' '}
+          ED and Waiting Room Volunteer at{' '}
           <a href="https://www.sentara.com/">Sentara Martha Jefferson Hospital</a>
-        </span>
-      ),
-    },
-    {
-      date: 'June 2022 - Dec 2022',
-      text: (
-        <span>
-          Patient Transporter at{' '}
-          <a href="https://uvahealth.com/">UVA University Hospital</a>
         </span>
       ),
     },

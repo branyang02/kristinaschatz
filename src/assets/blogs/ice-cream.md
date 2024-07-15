@@ -1,81 +1,31 @@
-# GroundBros: Sistor's Ice Cream
+# **GrondBros: Homemade Ice Cream Created By Sisters**
 
-<img src="https://branyang02.github.io/images/kristina.jpg" width="50%" height="auto" margin="20px auto" display="block">
+My sisters and I making ice cream during my junior year of high school when stuck at home during the COVID pandemic. Together, we started with simple vanilla and chocolate flavors. After we honed our skills, we started to dream of flavors beyond the instruction manual. Now, we experience with our ambitious ideas and love to share our frozen creations with friends. This blog is dedication to showing off our fresh batches! Stay tuned for updates coming soon.
 
-## Cinnamon Roll
+## **Cinnamon Roll Ice Cream**
 
-<img src="https://branyang02.github.io/images/cinnamon-roll.jpg" width="50%" height="auto" margin="20px auto" display="block">
+Who imagined that ice cream could taste this good? We're talking cinnamon rolls.
 
-Who imagined that a vanilla ice cream would taste this good? We're talking a cinnamon roll. The steps to perfect this unique dessert are simple and easy to follow.
+<div style="display: flex; justify-content: center;">
+    <img src="https://branyang02.github.io/images/cinnamon.jpg" width="25%" height="auto" style="margin: 20px;">
+    <img src="https://branyang02.github.io/images/cinnamon2.jpg" width="25%" height="auto" style="margin: 20px;">
+</div>
 
-### Steps to Make Cinnamon Roll Ice Cream
+### The backstory
 
-1. **Prepare the Cinnamon Roll Dough:**
+My younger sister and I were making a fresh batch of cinnamon rolls when we were struck with inspiration: what if we made cinnamon roll ice cream? We promptly got to work preparing a creamy, vanilla base and began the churn. We saved a few cinnamon rolls from our batch (it took a lot of will-power to not eat them all...), and we crumbled the fresh rolls into the churning mixture. After the ice cream thickened, we topped it with ground cinnamon and enjoyed. The creamy delight was even better than we expected, as the vanilla base soaked up lots of cinnamon roll flavor. We look forward to revisitng this flavor again soon in the future!
 
-   - Mix flour, sugar, yeast, and salt in a bowl.
-   - Add warm milk, melted butter, and an egg. Mix until a dough forms.
-   - Knead the dough on a floured surface until smooth.
-   - Let the dough rise in a warm place for about an hour.
+## **Blueberry Cheesecake**
 
-2. **Make the Cinnamon Filling:**
+Our blueberry cheesecake takes flavor in a totally new direction from our previous cinnamon roll batch.
 
-   - Mix brown sugar, cinnamon, and melted butter in a bowl.
+<div style="display: flex; justify-content: center;">
+    <img src="https://branyang02.github.io/images/blueberry.jpg" width="25%" height="auto" style="margin: 20px;">
+    <img src="https://branyang02.github.io/images/blueberry2.jpg" width="25%" height="auto" style="margin: 20px;">
+</div>
 
-3. **Assemble the Rolls:**
+### The backstory
 
-   - Roll out the dough into a rectangle.
-   - Spread the cinnamon filling evenly over the dough.
-   - Roll up the dough tightly and cut into slices.
+Every morning, my sister routinely eats a hefty bowl of plain greek yogurt topped with frozen blueberries. She drizzles honey on top to perfect her most important meal of the day. This ritual of hers inspired our blueberry cheesecake flavor. Originally, we were simply going to create a blueberry batch. But as we poured the frozen blueberries into the mixture, we suddenly decided to take a more ambitious direction and add greek yogurt! We weren't sure if it would turn out well, but it ended up being the perfect flavor combination! Our blueberry cheesecake ice cream is the perfect balance of sweet and tart, creamy and fruity! We will definitely revisit this flavor in the future.
 
-4. **Bake the Cinnamon Rolls:**
-
-   - Place the rolls in a baking dish and let them rise for another 30 minutes.
-   - Bake in a preheated oven at 350°F (175°C) for 20-25 minutes until golden brown.
-
-5. **Prepare the Ice Cream Base:**
-
-   - Mix heavy cream, milk, sugar, and vanilla extract in a bowl.
-   - Pour the mixture into an ice cream maker and churn according to the manufacturer's instructions.
-
-6. **Combine and Freeze:**
-   - Once the ice cream is churned, fold in pieces of the baked cinnamon rolls.
-   - Transfer the mixture to a container and freeze for at least 4 hours or until firm.
-
-## Chocolate Chip Cookie
-
-<img src="https://branyang02.github.io/images/chocolate-chip-cookie.jpg" width="50%" height="auto" margin="20px auto" display="block">
-
-Taste the best ice cream in the world. The combination of creamy vanilla ice cream with chunks of chocolate chip cookies is irresistible. Follow these steps to make your own Chocolate Chip Cookie Ice Cream.
-
-### Steps to Make Chocolate Chip Cookie Ice Cream
-
-1. **Prepare the Cookie Dough:**
-
-   - Mix flour, baking soda, and salt in a bowl.
-   - In another bowl, beat butter, sugar, and brown sugar until creamy.
-   - Add eggs and vanilla extract to the butter mixture and mix well.
-   - Gradually add the flour mixture and mix until combined.
-   - Stir in chocolate chips.
-
-2. **Bake the Cookies:**
-
-   - Preheat the oven to 350°F (175°C).
-   - Drop spoonfuls of dough onto a baking sheet.
-   - Bake for 10-12 minutes or until golden brown.
-   - Let the cookies cool completely.
-
-3. **Prepare the Ice Cream Base:**
-
-   - Mix heavy cream, milk, sugar, and vanilla extract in a bowl.
-   - Pour the mixture into an ice cream maker and churn according to the manufacturer's instructions.
-
-4. **Combine and Freeze:**
-
-   - Once the ice cream is churned, fold in pieces of the baked chocolate chip cookies.
-   - Transfer the mixture to a container and freeze for at least 4 hours or until firm.
-
-Enjoy your homemade Chocolate Chip Cookie Ice Cream!
-
-## Conclusion
-
-Making your own ice cream at home can be a fun and rewarding experience. Whether you prefer the unique taste of Cinnamon Roll Ice Cream or the classic flavor of Chocolate Chip Cookie Ice Cream, these recipes are sure to delight your taste buds. Happy ice cream making!
+### Stay tuned for updates!

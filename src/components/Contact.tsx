@@ -15,6 +15,12 @@ const Contact = () => {
           </a>
         </li>
         <li>
+          <FontAwesomeIcon icon={faEnvelope} />{' '}
+          <a href="mailto:kristinaschatz17@gmail.com" style={{ textDecoration: 'none' }}>
+            kristinaschatz17@gmail.com
+          </a>
+        </li>
+        <li>
           <FontAwesomeIcon icon={faLinkedin} />{' '}
           <a
             href="https://www.linkedin.com/in/kristina-schatz-74b021240/"
