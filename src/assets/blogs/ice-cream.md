@@ -1,6 +1,6 @@
 # GroundBros: Sistor's Ice Cream
 
-<img src="https://branyang02.github.io/images/groundbros.jpg" width="50%" height="auto" margin="20px auto" display="block">
+<img src="https://branyang02.github.io/images/kristina.jpg" width="50%" height="auto" margin="20px auto" display="block">
 
 ## Cinnamon Roll
 
