@@ -1,7 +1,3 @@
-import React from 'react';
-import { Heading, Pane, Text, majorScale, minorScale } from 'evergreen-ui';
-import { useDarkMode } from '../context/DarkModeContext';
-
 import {
   SiDjango,
   SiExpress,
@@ -18,6 +14,10 @@ import {
   SiReact,
   SiTypescript,
 } from '@icons-pack/react-simple-icons';
+import { majorScale, minorScale, Pane, Text } from 'evergreen-ui';
+import React from 'react';
+
+import { useDarkMode } from '../context/DarkModeContext';
 
 function getLogo(tech: string) {
   switch (tech) {
@@ -65,25 +65,25 @@ const Projects: React.FC = () => {
       title: 'GLOMA: Grounded Location for Object Manipulation',
       authors: [
         {
-          name: "Yifan (Brandon) Yang",
-          link: "https://www.brandon-yifan-yang.com"
+          name: 'Yifan (Brandon) Yang',
+          link: 'https://www.brandon-yifan-yang.com',
         },
         {
-          name: "Mohammad Samin Yasar",
-          link: "https://samin.netlify.app/"
+          name: 'Mohammad Samin Yasar',
+          link: 'https://samin.netlify.app/',
         },
         {
-          name: "Tariq Iqbal",
-          link: "https://www.tiqbal.com/"
-        }
+          name: 'Tariq Iqbal',
+          link: 'https://www.tiqbal.com/',
+        },
       ],
       description:
-        "GLOMA is a diffusion based text-image editing model for robotic agents to generate goal images for manipulation tasks. GLOMA uses a ViT and LLM to extract corresponding objects from the image based on the text prompt, and then generates a goal image through image diffusion. GitHub",
+        'GLOMA is a diffusion based text-image editing model for robotic agents to generate goal images for manipulation tasks. GLOMA uses a ViT and LLM to extract corresponding objects from the image based on the text prompt, and then generates a goal image through image diffusion. GitHub',
       link: 'https://branyang02.github.io/images/gloma.png',
       metaLinks: [
         {
-          name: "GitHub",
-          link: "https://github.com/branyang02/GLOMA"
+          name: 'GitHub',
+          link: 'https://github.com/branyang02/GLOMA',
         },
       ],
       techStack: [],
@@ -96,8 +96,8 @@ const Projects: React.FC = () => {
       link: 'https://github.com/branyang02/PandaFactory/tree/main',
       metaLinks: [
         {
-          name: "GitHub",
-          link: "https://github.com/branyang02/PandaFactory/"
+          name: 'GitHub',
+          link: 'https://github.com/branyang02/PandaFactory/',
         },
       ],
       techStack: ['Python', 'PyTorch', 'Nvidia IsaacGym'],
@@ -105,17 +105,18 @@ const Projects: React.FC = () => {
     {
       image: 'https://branyang02.github.io/images/notie.png',
       title: 'Notie',
-      description: 'A markdown note taking app that features live coding, TikZ, and LaTeX support.',
+      description:
+        'A markdown note taking app that features live coding, TikZ, and LaTeX support.',
       link: 'https://github.com/branyang02/Notie',
       metaLinks: [
         {
-          name: "GitHub",
-          link: "https://github.com/branyang02/Notie"
+          name: 'GitHub',
+          link: 'https://github.com/branyang02/Notie',
         },
         {
-          name: "Live Demo",
-          link: "https://notie-nine.vercel.app/"
-        }
+          name: 'Live Demo',
+          link: 'https://notie-nine.vercel.app/',
+        },
       ],
       techStack: ['TypeScript', 'React', 'Python', 'Flask'],
     },
@@ -125,34 +126,34 @@ const Projects: React.FC = () => {
       title: 'Smart OH (VTHacks)',
       authors: [
         {
-          name: "Edward Wei",
-          link: "https://edwardwei.com/"
+          name: 'Edward Wei',
+          link: 'https://edwardwei.com/',
         },
         {
-          name: "Brandon Yang",
-          link: "https://www.brandon-yifan-yang.com"
+          name: 'Brandon Yang',
+          link: 'https://www.brandon-yifan-yang.com',
         },
         {
-          name: "Ravi Jayaraman",
-          link: "https://www.linkedin.com/in/ravi-jayaraman-/"
+          name: 'Ravi Jayaraman',
+          link: 'https://www.linkedin.com/in/ravi-jayaraman-/',
         },
         {
-          name: "Jack Omohundro",
-          link: "https://www.linkedin.com/in/jackomohundro/"
-        }
+          name: 'Jack Omohundro',
+          link: 'https://www.linkedin.com/in/jackomohundro/',
+        },
       ],
       description:
         'AI powered office hour queue system that streamlines the process of office hours.',
       link: 'https://github.com/ewei2406/SmartOH',
       metaLinks: [
         {
-          name: "GitHub",
-          link: "https://github.com/ewei2406/SmartOH"
+          name: 'GitHub',
+          link: 'https://github.com/ewei2406/SmartOH',
         },
-      {
-          name: "DevPost",
-          link: "https://devpost.com/software/smartoh"
-        }
+        {
+          name: 'DevPost',
+          link: 'https://devpost.com/software/smartoh',
+        },
       ],
       techStack: [
         'Python',
@@ -172,8 +173,8 @@ const Projects: React.FC = () => {
       link: 'https://github.com/branyang02/Django-AI-Calendar-Map',
       metaLinks: [
         {
-          name: "GitHub",
-          link: "https://github.com/branyang02/Django-AI-Calendar-Map"
+          name: 'GitHub',
+          link: 'https://github.com/branyang02/Django-AI-Calendar-Map',
         },
       ],
       techStack: ['Python', 'JavaScript', 'Django', 'OpenAI', 'Google Cloud', 'Heroku'],
@@ -185,8 +186,8 @@ const Projects: React.FC = () => {
       link: 'https://github.com/branyang02/multiagent_tetris',
       metaLinks: [
         {
-          name: "GitHub",
-          link: "https://github.com/branyang02/multiagent_tetris"
+          name: 'GitHub',
+          link: 'https://github.com/branyang02/multiagent_tetris',
         },
       ],
       techStack: ['Python', 'PyTorch'],
@@ -199,15 +200,15 @@ const Projects: React.FC = () => {
       link: '/projects/spelling-bee',
       metaLinks: [
         {
-          name: "Live Website",
-          link: "/projects/spelling-bee"
+          name: 'Live Website',
+          link: '/projects/spelling-bee',
         },
       ],
     },
     {
-      image: "https://branyang02.github.io/images/3dgs.jpg",
-      title: "3DGS Language Instructed Editing",
-      description: "Coming soon...",
+      image: 'https://branyang02.github.io/images/3dgs.jpg',
+      title: '3DGS Language Instructed Editing',
+      description: 'Coming soon...',
     },
   ];
 
@@ -229,28 +230,70 @@ const Projects: React.FC = () => {
             <Pane flex={1} marginRight={16}>
               {project.image && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  <img src={project.image} alt={project.title} style={{ width: '100%', borderRadius: '4px' }} />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    style={{ width: '100%', borderRadius: '4px' }}
+                  />
                 </a>
               )}
               {project.gif && (
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  <img src={project.gif} alt={project.title} style={{ width: '100%', borderRadius: '4px' }} />
+                  <img
+                    src={project.gif}
+                    alt={project.title}
+                    style={{ width: '100%', borderRadius: '4px' }}
+                  />
                 </a>
               )}
             </Pane>
             <Pane flex={2}>
               {project.link ? (
-                <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
-                  <Text size={600} marginTop={minorScale(2)} color={darkMode ? 'white' : 'black'} display="block" fontWeight="bold">{project.title}</Text>
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <Text
+                    size={600}
+                    marginTop={minorScale(2)}
+                    color={darkMode ? 'white' : 'black'}
+                    display="block"
+                    fontWeight="bold"
+                  >
+                    {project.title}
+                  </Text>
                 </a>
               ) : (
-                <Text size={600} marginTop={minorScale(2)} color={darkMode ? 'white' : 'black'} display="block" fontWeight="bold">{project.title}</Text>
+                <Text
+                  size={600}
+                  marginTop={minorScale(2)}
+                  color={darkMode ? 'white' : 'black'}
+                  display="block"
+                  fontWeight="bold"
+                >
+                  {project.title}
+                </Text>
               )}
               {project.authors && (
-                <Text size={400} marginTop={minorScale(1)} color={darkMode ? 'white' : 'black'} display="block">
+                <Text
+                  size={400}
+                  marginTop={minorScale(1)}
+                  color={darkMode ? 'white' : 'black'}
+                  display="block"
+                >
                   {project.authors.map((author, authorIndex) => (
                     <React.Fragment key={authorIndex}>
-                      <a href={author.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', fontWeight: author.name.includes('Brandon') ? 'bold' : 'normal' }}>
+                      <a
+                        href={author.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          textDecoration: 'none',
+                          fontWeight: author.name.includes('Brandon') ? 'bold' : 'normal',
+                        }}
+                      >
                         {author.name}
                       </a>
                       {authorIndex < project.authors.length - 1 && ', '}
@@ -258,12 +301,29 @@ const Projects: React.FC = () => {
                   ))}
                 </Text>
               )}
-              <Text size={400} marginTop={minorScale(2)} color={darkMode ? 'white' : 'black'} display="block">{project.description}</Text>
+              <Text
+                size={400}
+                marginTop={minorScale(2)}
+                color={darkMode ? 'white' : 'black'}
+                display="block"
+              >
+                {project.description}
+              </Text>
               {project.metaLinks && (
-                <Text size={400} marginTop={minorScale(1)} color={darkMode ? 'white' : 'black'} display="block">
+                <Text
+                  size={400}
+                  marginTop={minorScale(1)}
+                  color={darkMode ? 'white' : 'black'}
+                  display="block"
+                >
                   {project.metaLinks.map((metaLink, metaLinkIndex) => (
                     <React.Fragment key={metaLinkIndex}>
-                      <a href={metaLink.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                      <a
+                        href={metaLink.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ textDecoration: 'none' }}
+                      >
                         {metaLink.name}
                       </a>
                       {metaLinkIndex < project.metaLinks.length - 1 && ' / '}
@@ -272,12 +332,24 @@ const Projects: React.FC = () => {
                 </Text>
               )}
               <Pane display="flex" flexWrap="wrap" marginTop={minorScale(2)}>
-                {project.techStack && project.techStack.map((tech, techIndex) => (
-                  <Pane key={techIndex} display="flex" alignItems="center" marginRight={majorScale(1)}>
-                    {getLogo(tech)}
-                    <Text size={300} marginLeft={minorScale(1)} color={darkMode ? 'white' : 'black'}>{tech}</Text>
-                  </Pane>
-                ))}
+                {project.techStack &&
+                  project.techStack.map((tech, techIndex) => (
+                    <Pane
+                      key={techIndex}
+                      display="flex"
+                      alignItems="center"
+                      marginRight={majorScale(1)}
+                    >
+                      {getLogo(tech)}
+                      <Text
+                        size={300}
+                        marginLeft={minorScale(1)}
+                        color={darkMode ? 'white' : 'black'}
+                      >
+                        {tech}
+                      </Text>
+                    </Pane>
+                  ))}
               </Pane>
             </Pane>
           </Pane>

@@ -17,14 +17,14 @@ const renderListItems = () => {
   const listItems = [
     {
       date: 'Jan 2024 - Current',
-      text: <span>TA for Theory of Computation (UVA CS 3120)</span>,
+      text: <span>TA for Biology 101 (UVA)</span>,
     },
     {
       date: 'May 2022 - Current',
       text: (
         <span>
-          Research Assistant at{' '}
-          <a href="https://www.collabrobotics.com/">Collaborative Robotics Lab</a>
+          Volunteer at{' '}
+          <a href="https://www.virginia.edu/">University of Virginia Health System</a>
         </span>
       ),
     },
@@ -32,7 +32,8 @@ const renderListItems = () => {
       date: 'Oct 2023 - Current',
       text: (
         <span>
-          Co-Founder & Software Developer at <a>Voy</a>
+          EMT at{' '}
+          <a href="https://www.virginia.edu/">Charlottesville-Albemarle Rescue Squad</a>
         </span>
       ),
     },
@@ -40,8 +41,7 @@ const renderListItems = () => {
       date: 'May 2023 - Aug 2023',
       text: (
         <span>
-          AI/ML Research Intern at{' '}
-          <a href="https://engineering.virginia.edu/link-lab">UVA Link Lab</a>
+          Shadowing Doctor at <a href="https://www.sjia.org/">SJIA</a>
         </span>
       ),
     },
@@ -49,10 +49,8 @@ const renderListItems = () => {
       date: 'Jan 2023 - May 2023',
       text: (
         <span>
-          Lab Lead TA for{' '}
-          <a href="https://www.cs.virginia.edu/~jh2jf/courses/cs2130/spring2023/">
-            Computer Systems Organization (UVA CS 2130)
-          </a>
+          Refugee Support Volunteer at{' '}
+          <a href="https://www.virginia.edu/">International Rescue Committee</a>
         </span>
       ),
     },

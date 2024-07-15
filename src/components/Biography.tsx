@@ -10,27 +10,21 @@ const Biography: React.FC = () => {
       <div className="biography-text">
         <h3>Biography</h3>
         <p>
-          I am a third-year B.S. Computer Science student at the{' '}
-          <a href="https://engineering.virginia.edu/"> University of Virginia</a>. I am
-          interested in Machine Learning (ML), Reinforcement Learning (RL), Computer
-          Vision, Robotics, and Software Development . I am currently working as a
-          research assistant with{' '}
-          <a href="https://engineering.virginia.edu/faculty/tariq-iqbal">
-            Professor Iqbal
-          </a>{' '}
-          at the <a href="https://www.collabrobotics.com/">Collaborative Robotics Lab</a>{' '}
-          at UVA. I am particularly interested in applying ML and RL to applications
-          robotics, as well as building software applications using AI components such as
-          LLM. I am also interested in the intersection between ML and Computer Vision,
-          and I am currently working on a project that uses LLM and Diffusion Models to
-          generate goal images for Imitation and Reinforcement Learning.
+          I am a pre-med student at the{' '}
+          <a href="https://www.virginia.edu/">University of Virginia</a>. I have
+          experience as an Emergency Medical Technician (EMT), and I am actively involved
+          in refugee support and volunteering activities. Additionally, I serve as a
+          Teaching Assistant (TA) and have been shadowing doctors affiliated with the{' '}
+          <a href="https://www.sjia.org/">SJIA</a>. My diverse experiences have fueled my
+          passion for medicine and community service, and I am committed to making a
+          positive impact in the healthcare field.
         </p>
         <Contact />
       </div>
       <div className="biography-image">
         <img
-          src={'https://branyang02.github.io/images/Brandon_Yang.jpg'}
-          alt="Brandon Yang"
+          src={'https://branyang02.github.io/images/kristina.jpg'}
+          alt="Kristina Schatz"
         />
       </div>
     </div>
