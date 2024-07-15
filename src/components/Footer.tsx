@@ -1,4 +1,4 @@
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Pane } from 'evergreen-ui';
@@ -16,7 +16,7 @@ const Footer = () => {
       color={'black'}
     >
       <p>© {currentYear} Kristina Schatz</p>
-      <a className="icon" href="mailto:jqm9ba@virginia.edu" title="Email">
+      <a className="icon" href="mailto:zyy2sb@virginia.edu" title="Email">
         <FontAwesomeIcon icon={faEnvelope} />
       </a>
       <a

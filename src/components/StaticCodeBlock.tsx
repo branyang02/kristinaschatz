@@ -1,5 +1,5 @@
 import { Pane } from 'evergreen-ui';
-import { atomOneLight, CodeBlock, CopyBlock, nord } from 'react-code-blocks';
+import { atomOneLight, CodeBlock, CopyBlock } from 'react-code-blocks';
 
 const StaticCodeBlock = ({ code, language }: { code: string; language: string }) => {
   return (

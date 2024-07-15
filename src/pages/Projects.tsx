@@ -1,4 +1,4 @@
-import { Heading, minorScale, Pane, Text } from 'evergreen-ui';
+import { minorScale, Pane, Text } from 'evergreen-ui';
 import React from 'react';
 
 const Projects: React.FC = () => {
