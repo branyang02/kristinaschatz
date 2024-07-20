@@ -3,6 +3,7 @@ import '../styles/Biography.css';
 import { Avatar, Heading, Pane, Text } from 'evergreen-ui';
 import React from 'react';
 
+import kristinaImage from '../assets/kristina.jpg';
 import Contact from './Contact';
 import WorkHistory from './WorkHistory';
 
@@ -37,11 +38,7 @@ const Biography: React.FC = () => {
         flexDirection="column"
         alignItems="center"
       >
-        <Avatar
-          src="https://branyang02.github.io/images/kristina.jpg"
-          name="Kristina Schatz"
-          size={300}
-        />
+        <Avatar src={kristinaImage} name="Kristina Schatz" size={300} />
         <Heading size={900} marginTop={10}>
           Kristina Schatz
         </Heading>
