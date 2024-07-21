@@ -29,8 +29,6 @@ const Resume = () => {
           <br />
           Major: B.A. Cognitive Science, Minor: Chinese Language & Literature
           <br />
-          GPA: 3.975 / 4.0
-          <br />
           Certifications: Emergency Medical Technician, BLS CPR
         </Paragraph>
 
@@ -89,17 +87,16 @@ const Resume = () => {
           </Strong>
           <Text color="muted"> — Jan 2024 - Present</Text>
           <Paragraph marginTop={4}>
-            • Respond to 911 medical calls for 12 hours per week.
+            • Respond to 911 medical calls during weekly 13-hour shifts.
             <br />
-            • Take vital signs and perform assessments to evaluate patients&apos;s
-            conditions.
-            <br />• Administer appropriate medications and interventions.
+            • Perform patient care on scene and during transport to hospital.
+            <br />• Take vital signs, administer medications, and perform interventions.
           </Paragraph>
 
           <Strong>Hospice Volunteer, Heartland Hospice, Charlottesville, VA</Strong>
           <Text color="muted"> — Sep 2023 - Present</Text>
           <Paragraph marginTop={4}>
-            • Visit nursing home resident weekly as a friendly visitor volunteer.
+            • Visit nursing home residents weekly to provide care and companionship.
             <br />• Inform hospice staff of changes in patient&apos;s condition to ensure
             quality patient care.
           </Paragraph>
@@ -109,7 +106,7 @@ const Resume = () => {
           </Strong>
           <Text color="muted"> — Aug 2023 - Present</Text>
           <Paragraph marginTop={4}>
-            • Tutor class of refugees 2 times per week to develop student speaking,
+            • Teach ESL class for newly-arrived refugees 2 times per week to develop student speaking,
             reading, and writing skills.
             <br />• Assist refugees in adjusting to new life in the U.S.
           </Paragraph>
@@ -127,16 +124,6 @@ const Resume = () => {
         </Pane>
 
         <Heading size={700} marginTop={32}>
-          Publications
-        </Heading>
-        <Paragraph marginTop={8}>
-          • Schneider K., Schatz K., Van Wagoner K., Pavelec C., Sovinski H., Kuzniewska
-          A., Leitinger N., Elliott M.R., and S. Arandjelovic. Adaptation of macrophage
-          metabolism to reduced efferocytosis alleviates inflammatory arthritis.
-          (Manuscript in Preparation)
-        </Paragraph>
-
-        <Heading size={700} marginTop={32}>
           Extracurriculars
         </Heading>
         <Paragraph marginTop={8}>
@@ -146,7 +133,7 @@ const Resume = () => {
           </Strong>{' '}
           — May 2023 - Present
           <br />
-          • Design flyers for all CSA events during the 2023-24 school year.
+          • Design flyers for CSA events during the 2023-24 school year.
           <br />• Manage CSA social media accounts.
         </Paragraph>
       </Pane>

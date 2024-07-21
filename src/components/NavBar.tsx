@@ -37,14 +37,6 @@ const NavBar = () => {
       <Nav.Link as={Link} to="/resume" className="navbar-text" style={{ color: 'black' }}>
         Resume
       </Nav.Link>
-      <Nav.Link
-        as={Link}
-        to="/projects"
-        className="navbar-text"
-        style={{ color: 'black' }}
-      >
-        Projects
-      </Nav.Link>
     </Nav>
   );
 
@@ -77,14 +69,6 @@ const NavBar = () => {
               }}
             >
               Resume
-            </Menu.Item>
-            <Menu.Item
-              onSelect={() => {
-                handleSelect('/projects');
-                close();
-              }}
-            >
-              Projects
             </Menu.Item>
           </Menu.Group>
         </Menu>

@@ -10,7 +10,6 @@ import Footer from './components/Footer';
 import NavBar from './components/NavBar';
 import NoteBlogCards from './pages/NoteBlogCards';
 import NotesBlogs from './pages/NotesBlogs';
-import Projects from './pages/Projects';
 import Resume from './pages/Resume';
 
 const App = () => {
@@ -42,7 +41,6 @@ const App = () => {
                   </Pane>
                 }
               />
-              <Route path="/projects" element={<Projects />} />
               <Route path="/resume" element={<Resume />} />
             </Routes>
             <ClustrMapsWidget />
